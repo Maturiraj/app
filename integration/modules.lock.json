@@ -44,7 +44,7 @@
     "supabase/migrations/20260722010000_ai_rate_limit_atomic.sql",
     "supabase/migrations/20260920000000_sim_progress_percentile_idx.sql",
     "supabase/migrations/20260922000000_ai_usage_ledger.sql",
-    "supabase/migrations/20260922000000_sim_progress_attempt_id.sql",
+    "supabase/migrations/20260922000001_sim_progress_attempt_id.sql",
     "supabase/migrations/20260922010000_sim_progress_rls_insert_only.sql",
     "supabase/migrations/20261119163143_admin_overview_metrics.sql",
     "supabase/migrations/20261119164003_admin_operations.sql"
@@ -181,10 +181,14 @@
     "server": {
       "baseCommit": "279d39f60e042b52ca6b5a7d6aa102088b8cef96",
       "pathCommits": {
+        "supabase/migrations/20260922000000_sim_progress_attempt_id.sql": "7bddac8bce3458bf7c1d7a8370230c9f7e95e18c",
+        "supabase/migrations/20260922000001_sim_progress_attempt_id.sql": "7bddac8bce3458bf7c1d7a8370230c9f7e95e18c",
         "supabase/migrations/20261119163143_admin_overview_metrics.sql": "6c1c14497739e510e135a636445657546cd3ff65",
         "supabase/migrations/20261119164003_admin_operations.sql": "4c61359cf7dcc8bd2e6989e165df11be2af8f173"
       },
-      "deleted": []
+      "deleted": [
+        "supabase/migrations/20260922000000_sim_progress_attempt_id.sql"
+      ]
     },
     "skripte": {
       "baseCommit": "14477f48464faf5b28ab668795a4924c9d517321",
