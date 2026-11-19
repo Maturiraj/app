@@ -56,5 +56,6 @@
       "label": "Zoologija",
       "count": 1
     }
-  ]
+  ],
+  "taxonomy": "taxonomy.json"
 }

@@ -37,5 +37,77 @@
   "usageTermsUrl": "https://www.ncvvo.hr/drzavna-matura-2025-2026-prvi-rok/",
   "usageCheckedAt": "2026-09-10T16:35:20.152Z",
   "usageStatus": "free-preparation-only-paid-route-unresolved",
-  "sourceHashesRecheckedAt": "2026-09-10T16:35:20.152Z"
+  "sourceHashesRecheckedAt": "2026-09-10T16:35:20.152Z",
+  "level": "single",
+  "season": "ljeto",
+  "revision": "sha256:ee284a4fa77a1675c2b7fe5b1c8c111a206b484765c6f833ecc3a9e50806e8ef",
+  "contentVersion": "source-review-v6-tables",
+  "publicationStatus": "candidate",
+  "expertReviewStatus": "pending",
+  "mediaPublicationStatus": "qa-only",
+  "publishedChapterAvailable": false,
+  "capabilities": {
+    "exam": false,
+    "practice": false,
+    "script": false,
+    "ai": false
+  },
+  "revisionBasis": "sourceFiles.package.sha256",
+  "productionStatus": "structural-pass",
+  "expertVerifiedAt": null,
+  "reviewRecord": "qa/2026_ljeto.json",
+  "mediaRecord": "qa/2026_ljeto-assets.json",
+  "preparedMediaCount": 20,
+  "topicCodes": [
+    "biokemija",
+    "biotehnologija",
+    "botanika",
+    "ekologija",
+    "evolucija",
+    "fiziologija",
+    "genetika",
+    "metabolizam",
+    "sistematika",
+    "stanica",
+    "zoologija"
+  ],
+  "candidateTarget": 5,
+  "missingCandidates": [
+    {
+      "session": "2026_jesen",
+      "year": 2026,
+      "season": "jesen",
+      "status": "source-pending",
+      "examSource": null,
+      "officialAnswerKeySource": null,
+      "mediaUsageStatus": null
+    },
+    {
+      "session": "2025_jesen",
+      "year": 2025,
+      "season": "jesen",
+      "status": "source-pending",
+      "examSource": null,
+      "officialAnswerKeySource": null,
+      "mediaUsageStatus": null
+    },
+    {
+      "session": "2025_ljeto",
+      "year": 2025,
+      "season": "ljeto",
+      "status": "source-pending",
+      "examSource": null,
+      "officialAnswerKeySource": null,
+      "mediaUsageStatus": null
+    },
+    {
+      "session": "2024_jesen",
+      "year": 2024,
+      "season": "jesen",
+      "status": "source-pending",
+      "examSource": null,
+      "officialAnswerKeySource": null,
+      "mediaUsageStatus": null
+    }
+  ]
 }

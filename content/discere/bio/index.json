@@ -12,7 +12,19 @@
       "questionCount": 48,
       "maxPoints": 70,
       "file": "exams/2026_ljeto.mjs",
-      "qaStatus": "structural-pass"
+      "qaStatus": "structural-pass",
+      "revision": "sha256:ee284a4fa77a1675c2b7fe5b1c8c111a206b484765c6f833ecc3a9e50806e8ef",
+      "contentVersion": "source-review-v6-tables",
+      "publicationStatus": "candidate",
+      "expertReviewStatus": "pending",
+      "mediaPublicationStatus": "qa-only",
+      "publishedChapterAvailable": false,
+      "capabilities": {
+        "exam": false,
+        "practice": false,
+        "script": false,
+        "ai": false
+      }
     }
   ]
 }

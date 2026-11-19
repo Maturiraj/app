@@ -1,0 +1,62 @@
+{
+  "subject": "bio",
+  "status": "draft",
+  "modules": [],
+  "topics": {
+    "biokemija": {
+      "label": "Biokemija",
+      "chapterSlug": null,
+      "aliases": []
+    },
+    "biotehnologija": {
+      "label": "Biotehnologija",
+      "chapterSlug": null,
+      "aliases": []
+    },
+    "botanika": {
+      "label": "Botanika",
+      "chapterSlug": null,
+      "aliases": []
+    },
+    "ekologija": {
+      "label": "Ekologija",
+      "chapterSlug": null,
+      "aliases": []
+    },
+    "evolucija": {
+      "label": "Evolucija",
+      "chapterSlug": null,
+      "aliases": []
+    },
+    "fiziologija": {
+      "label": "Fiziologija",
+      "chapterSlug": null,
+      "aliases": []
+    },
+    "genetika": {
+      "label": "Genetika",
+      "chapterSlug": null,
+      "aliases": []
+    },
+    "metabolizam": {
+      "label": "Metabolizam",
+      "chapterSlug": null,
+      "aliases": []
+    },
+    "sistematika": {
+      "label": "Sistematika",
+      "chapterSlug": null,
+      "aliases": []
+    },
+    "stanica": {
+      "label": "Stanica",
+      "chapterSlug": null,
+      "aliases": []
+    },
+    "zoologija": {
+      "label": "Zoologija",
+      "chapterSlug": null,
+      "aliases": []
+    }
+  }
+}
