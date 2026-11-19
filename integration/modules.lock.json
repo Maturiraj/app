@@ -189,7 +189,11 @@
     },
     "termini": {
       "baseCommit": "46511fc2dbbee76a2911b0c92e9372c8d2cc408f",
-      "pathCommits": {},
+      "pathCommits": {
+        "app/termini/Termini2026.jsx": "456da3477d7341336bd357a2e573af45badf5b8d",
+        "app/termini/page.js": "456da3477d7341336bd357a2e573af45badf5b8d",
+        "content/termini/matura-2027.json": "456da3477d7341336bd357a2e573af45badf5b8d"
+      },
       "deleted": []
     }
   }

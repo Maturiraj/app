@@ -1,0 +1,1354 @@
+{
+  "schemaVersion": 1,
+  "schoolYear": "2026/2027",
+  "timeZone": "Europe/Zagreb",
+  "checkedOn": "2026-11-19",
+  "sources": {
+    "prvi": "https://www.ncvvo.hr/wp-content/uploads/2026/11/Kalendar-i-vremenik-provedbe-ispita-prvi-rok-2026_2027_-NOVO.pdf",
+    "drugi": "https://www.ncvvo.hr/wp-content/uploads/2026/04/Kalendar-i-vremenik-provedbe-ispita-%E2%80%93-drugi-rok-2026_2027.pdf"
+  },
+  "sessions": {
+    "prvi": {
+      "registration": [
+        "2026-12-01",
+        "2027-02-15"
+      ],
+      "exams": [
+        "2027-06-01",
+        "2027-06-25"
+      ],
+      "preliminaryResults": "2027-07-07",
+      "objectionDeadline": "2027-07-09",
+      "finalResults": "2027-07-16",
+      "certificateDistribution": "2027-07-19"
+    },
+    "drugi": {
+      "registration": [
+        "2027-07-17",
+        "2027-07-28"
+      ],
+      "exams": [
+        "2027-08-18",
+        "2027-09-03"
+      ],
+      "preliminaryResults": "2027-09-08",
+      "objectionDeadline": "2027-09-10",
+      "finalResults": "2027-09-15",
+      "certificateDistribution": "2027-09-16"
+    }
+  },
+  "events": [
+    {
+      "id": "2027-prvi-ces-test",
+      "subjectId": "ces",
+      "title": "Češki jezik · test",
+      "session": "prvi",
+      "level": null,
+      "part": "test",
+      "localDate": "2027-06-01",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-ita-test",
+      "subjectId": "ita",
+      "title": "Talijanski jezik i književnost · test",
+      "session": "prvi",
+      "level": null,
+      "part": "test",
+      "localDate": "2027-06-01",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:40",
+      "durationMinutes": 100,
+      "segmentMinutes": [
+        100
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-mag-test",
+      "subjectId": "mag",
+      "title": "Mađarski jezik i književnost · test",
+      "session": "prvi",
+      "level": null,
+      "part": "test",
+      "localDate": "2027-06-01",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-srp-test",
+      "subjectId": "srp",
+      "title": "Srpski jezik · test",
+      "session": "prvi",
+      "level": null,
+      "part": "test",
+      "localDate": "2027-06-01",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-ces-esej",
+      "subjectId": "ces",
+      "title": "Češki jezik · esej",
+      "session": "prvi",
+      "level": null,
+      "part": "esej",
+      "localDate": "2027-06-02",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-ita-esej",
+      "subjectId": "ita",
+      "title": "Talijanski jezik i književnost · esej",
+      "session": "prvi",
+      "level": null,
+      "part": "esej",
+      "localDate": "2027-06-02",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        180
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-mag-esej",
+      "subjectId": "mag",
+      "title": "Mađarski jezik i književnost · esej",
+      "session": "prvi",
+      "level": null,
+      "part": "esej",
+      "localDate": "2027-06-02",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        180
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-srp-esej",
+      "subjectId": "srp",
+      "title": "Srpski jezik · esej",
+      "session": "prvi",
+      "level": null,
+      "part": "esej",
+      "localDate": "2027-06-02",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        150
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-fra-A",
+      "subjectId": "fra",
+      "title": "Francuski jezik · viša (A)",
+      "session": "prvi",
+      "level": "A",
+      "part": null,
+      "localDate": "2027-06-03",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        65,
+        30,
+        55
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-fra-B",
+      "subjectId": "fra",
+      "title": "Francuski jezik · osnovna (B)",
+      "session": "prvi",
+      "level": "B",
+      "part": null,
+      "localDate": "2027-06-03",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:40",
+      "durationMinutes": 100,
+      "segmentMinutes": [
+        75,
+        25
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-lat-A",
+      "subjectId": "lat",
+      "title": "Latinski jezik · viša (A)",
+      "session": "prvi",
+      "level": "A",
+      "part": null,
+      "localDate": "2027-06-03",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:00",
+      "durationMinutes": 120,
+      "segmentMinutes": [
+        120
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-lat-B",
+      "subjectId": "lat",
+      "title": "Latinski jezik · osnovna (B)",
+      "session": "prvi",
+      "level": "B",
+      "part": null,
+      "localDate": "2027-06-03",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "15:40",
+      "durationMinutes": 100,
+      "segmentMinutes": [
+        100
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-kem",
+      "subjectId": "kem",
+      "title": "Kemija",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-04",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        180
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-soc",
+      "subjectId": "soc",
+      "title": "Sociologija",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-04",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "15:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-fiz",
+      "subjectId": "fiz",
+      "title": "Fizika",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-07",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        180
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-lik",
+      "subjectId": "lik",
+      "title": "Likovna umjetnost",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-07",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:00",
+      "durationMinutes": 120,
+      "segmentMinutes": [
+        120
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-nje-A",
+      "subjectId": "nje",
+      "title": "Njemački jezik · viša (A)",
+      "session": "prvi",
+      "level": "A",
+      "part": null,
+      "localDate": "2027-06-08",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        70,
+        35,
+        75
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-nje-B",
+      "subjectId": "nje",
+      "title": "Njemački jezik · osnovna (B)",
+      "session": "prvi",
+      "level": "B",
+      "part": null,
+      "localDate": "2027-06-08",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:10",
+      "durationMinutes": 130,
+      "segmentMinutes": [
+        100,
+        30
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-fil",
+      "subjectId": "fil",
+      "title": "Filozofija",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-08",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        150
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-spn-A",
+      "subjectId": "spn",
+      "title": "Španjolski jezik · viša (A)",
+      "session": "prvi",
+      "level": "A",
+      "part": null,
+      "localDate": "2027-06-09",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        65,
+        30,
+        55
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-spn-B",
+      "subjectId": "spn",
+      "title": "Španjolski jezik · osnovna (B)",
+      "session": "prvi",
+      "level": "B",
+      "part": null,
+      "localDate": "2027-06-09",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:40",
+      "durationMinutes": 100,
+      "segmentMinutes": [
+        75,
+        25
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-log",
+      "subjectId": "log",
+      "title": "Logika",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-09",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        150
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-bio",
+      "subjectId": "bio",
+      "title": "Biologija",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-10",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        150
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-pov",
+      "subjectId": "pov",
+      "title": "Povijest",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-10",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:15",
+      "durationMinutes": 135,
+      "segmentMinutes": [
+        135
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-psi",
+      "subjectId": "psi",
+      "title": "Psihologija",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-11",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-inf",
+      "subjectId": "inf",
+      "title": "Informatika",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-11",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "15:40",
+      "durationMinutes": 100,
+      "segmentMinutes": [
+        100
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-pig",
+      "subjectId": "pig",
+      "title": "Politika i gospodarstvo",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-14",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-geo",
+      "subjectId": "geo",
+      "title": "Geografija",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-14",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "15:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-hrv-test-i-sazetak",
+      "subjectId": "hrv",
+      "title": "Hrvatski jezik · test i sažetak",
+      "session": "prvi",
+      "level": null,
+      "part": "test-i-sazetak",
+      "localDate": "2027-06-16",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        100,
+        80
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-hrv-esej",
+      "subjectId": "hrv",
+      "title": "Hrvatski jezik · esej",
+      "session": "prvi",
+      "level": null,
+      "part": "esej",
+      "localDate": "2027-06-17",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:40",
+      "durationMinutes": 160,
+      "segmentMinutes": [
+        160
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-eng-A",
+      "subjectId": "eng",
+      "title": "Engleski jezik · viša (A)",
+      "session": "prvi",
+      "level": "A",
+      "part": null,
+      "localDate": "2027-06-18",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        70,
+        35,
+        75
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-eng-B",
+      "subjectId": "eng",
+      "title": "Engleski jezik · osnovna (B)",
+      "session": "prvi",
+      "level": "B",
+      "part": null,
+      "localDate": "2027-06-18",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:45",
+      "durationMinutes": 105,
+      "segmentMinutes": [
+        75,
+        30
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-grk",
+      "subjectId": "grk",
+      "title": "Grčki jezik",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-23",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:00",
+      "durationMinutes": 120,
+      "segmentMinutes": [
+        120
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-tal-A",
+      "subjectId": "tal",
+      "title": "Talijanski jezik · viša (A)",
+      "session": "prvi",
+      "level": "A",
+      "part": null,
+      "localDate": "2027-06-23",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        65,
+        30,
+        55
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-tal-B",
+      "subjectId": "tal",
+      "title": "Talijanski jezik · osnovna (B)",
+      "session": "prvi",
+      "level": "B",
+      "part": null,
+      "localDate": "2027-06-23",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "15:40",
+      "durationMinutes": 100,
+      "segmentMinutes": [
+        75,
+        25
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-mat-A",
+      "subjectId": "mat",
+      "title": "Matematika · viša (A)",
+      "session": "prvi",
+      "level": "A",
+      "part": null,
+      "localDate": "2027-06-24",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        180
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-mat-B",
+      "subjectId": "mat",
+      "title": "Matematika · osnovna (B)",
+      "session": "prvi",
+      "level": "B",
+      "part": null,
+      "localDate": "2027-06-24",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        150
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-gla",
+      "subjectId": "gla",
+      "title": "Glazbena umjetnost",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-25",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-eti",
+      "subjectId": "eti",
+      "title": "Etika",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-25",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        150
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-prvi-vje",
+      "subjectId": "vje",
+      "title": "Vjeronauk",
+      "session": "prvi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-06-25",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "15:10",
+      "durationMinutes": 70,
+      "segmentMinutes": [
+        70
+      ],
+      "sourceId": "prvi"
+    },
+    {
+      "id": "2027-drugi-ces-test",
+      "subjectId": "ces",
+      "title": "Češki jezik · test",
+      "session": "drugi",
+      "level": null,
+      "part": "test",
+      "localDate": "2027-08-18",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-ita-test",
+      "subjectId": "ita",
+      "title": "Talijanski jezik i književnost · test",
+      "session": "drugi",
+      "level": null,
+      "part": "test",
+      "localDate": "2027-08-18",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:40",
+      "durationMinutes": 100,
+      "segmentMinutes": [
+        100
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-mag-test",
+      "subjectId": "mag",
+      "title": "Mađarski jezik i književnost · test",
+      "session": "drugi",
+      "level": null,
+      "part": "test",
+      "localDate": "2027-08-18",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-srp-test",
+      "subjectId": "srp",
+      "title": "Srpski jezik · test",
+      "session": "drugi",
+      "level": null,
+      "part": "test",
+      "localDate": "2027-08-18",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-grk",
+      "subjectId": "grk",
+      "title": "Grčki jezik",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-08-18",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:00",
+      "durationMinutes": 120,
+      "segmentMinutes": [
+        120
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-ces-esej",
+      "subjectId": "ces",
+      "title": "Češki jezik · esej",
+      "session": "drugi",
+      "level": null,
+      "part": "esej",
+      "localDate": "2027-08-19",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-ita-esej",
+      "subjectId": "ita",
+      "title": "Talijanski jezik i književnost · esej",
+      "session": "drugi",
+      "level": null,
+      "part": "esej",
+      "localDate": "2027-08-19",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        180
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-mag-esej",
+      "subjectId": "mag",
+      "title": "Mađarski jezik i književnost · esej",
+      "session": "drugi",
+      "level": null,
+      "part": "esej",
+      "localDate": "2027-08-19",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        180
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-srp-esej",
+      "subjectId": "srp",
+      "title": "Srpski jezik · esej",
+      "session": "drugi",
+      "level": null,
+      "part": "esej",
+      "localDate": "2027-08-19",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        150
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-fra-A",
+      "subjectId": "fra",
+      "title": "Francuski jezik · viša (A)",
+      "session": "drugi",
+      "level": "A",
+      "part": null,
+      "localDate": "2027-08-19",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        65,
+        30,
+        55
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-fra-B",
+      "subjectId": "fra",
+      "title": "Francuski jezik · osnovna (B)",
+      "session": "drugi",
+      "level": "B",
+      "part": null,
+      "localDate": "2027-08-19",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "15:40",
+      "durationMinutes": 100,
+      "segmentMinutes": [
+        75,
+        25
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-nje-A",
+      "subjectId": "nje",
+      "title": "Njemački jezik · viša (A)",
+      "session": "drugi",
+      "level": "A",
+      "part": null,
+      "localDate": "2027-08-20",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        70,
+        35,
+        75
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-nje-B",
+      "subjectId": "nje",
+      "title": "Njemački jezik · osnovna (B)",
+      "session": "drugi",
+      "level": "B",
+      "part": null,
+      "localDate": "2027-08-20",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:10",
+      "durationMinutes": 130,
+      "segmentMinutes": [
+        100,
+        30
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-eti",
+      "subjectId": "eti",
+      "title": "Etika",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-08-20",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        150
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-vje",
+      "subjectId": "vje",
+      "title": "Vjeronauk",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-08-20",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "15:10",
+      "durationMinutes": 70,
+      "segmentMinutes": [
+        70
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-hrv-test-i-sazetak",
+      "subjectId": "hrv",
+      "title": "Hrvatski jezik · test i sažetak",
+      "session": "drugi",
+      "level": null,
+      "part": "test-i-sazetak",
+      "localDate": "2027-08-23",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        100,
+        80
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-fil",
+      "subjectId": "fil",
+      "title": "Filozofija",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-08-23",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        150
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-hrv-esej",
+      "subjectId": "hrv",
+      "title": "Hrvatski jezik · esej",
+      "session": "drugi",
+      "level": null,
+      "part": "esej",
+      "localDate": "2027-08-24",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:40",
+      "durationMinutes": 160,
+      "segmentMinutes": [
+        160
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-gla",
+      "subjectId": "gla",
+      "title": "Glazbena umjetnost",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-08-24",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "15:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-kem",
+      "subjectId": "kem",
+      "title": "Kemija",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-08-25",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        180
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-psi",
+      "subjectId": "psi",
+      "title": "Psihologija",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-08-25",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "15:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-fiz",
+      "subjectId": "fiz",
+      "title": "Fizika",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-08-26",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        180
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-lik",
+      "subjectId": "lik",
+      "title": "Likovna umjetnost",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-08-26",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:00",
+      "durationMinutes": 120,
+      "segmentMinutes": [
+        120
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-eng-A",
+      "subjectId": "eng",
+      "title": "Engleski jezik · viša (A)",
+      "session": "drugi",
+      "level": "A",
+      "part": null,
+      "localDate": "2027-08-27",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        70,
+        35,
+        75
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-eng-B",
+      "subjectId": "eng",
+      "title": "Engleski jezik · osnovna (B)",
+      "session": "drugi",
+      "level": "B",
+      "part": null,
+      "localDate": "2027-08-27",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:45",
+      "durationMinutes": 105,
+      "segmentMinutes": [
+        75,
+        30
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-log",
+      "subjectId": "log",
+      "title": "Logika",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-08-27",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        150
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-mat-A",
+      "subjectId": "mat",
+      "title": "Matematika · viša (A)",
+      "session": "drugi",
+      "level": "A",
+      "part": null,
+      "localDate": "2027-08-30",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "12:00",
+      "durationMinutes": 180,
+      "segmentMinutes": [
+        180
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-mat-B",
+      "subjectId": "mat",
+      "title": "Matematika · osnovna (B)",
+      "session": "drugi",
+      "level": "B",
+      "part": null,
+      "localDate": "2027-08-30",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        150
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-soc",
+      "subjectId": "soc",
+      "title": "Sociologija",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-08-30",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "15:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-bio",
+      "subjectId": "bio",
+      "title": "Biologija",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-08-31",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        150
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-pov",
+      "subjectId": "pov",
+      "title": "Povijest",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-08-31",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:15",
+      "durationMinutes": 135,
+      "segmentMinutes": [
+        135
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-inf",
+      "subjectId": "inf",
+      "title": "Informatika",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-09-01",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:40",
+      "durationMinutes": 100,
+      "segmentMinutes": [
+        100
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-pig",
+      "subjectId": "pig",
+      "title": "Politika i gospodarstvo",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-09-01",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "15:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-spn-A",
+      "subjectId": "spn",
+      "title": "Španjolski jezik · viša (A)",
+      "session": "drugi",
+      "level": "A",
+      "part": null,
+      "localDate": "2027-09-02",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        65,
+        30,
+        55
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-spn-B",
+      "subjectId": "spn",
+      "title": "Španjolski jezik · osnovna (B)",
+      "session": "drugi",
+      "level": "B",
+      "part": null,
+      "localDate": "2027-09-02",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:40",
+      "durationMinutes": 100,
+      "segmentMinutes": [
+        75,
+        25
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-geo",
+      "subjectId": "geo",
+      "title": "Geografija",
+      "session": "drugi",
+      "level": null,
+      "part": null,
+      "localDate": "2027-09-02",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "15:30",
+      "durationMinutes": 90,
+      "segmentMinutes": [
+        90
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-tal-A",
+      "subjectId": "tal",
+      "title": "Talijanski jezik · viša (A)",
+      "session": "drugi",
+      "level": "A",
+      "part": null,
+      "localDate": "2027-09-03",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "11:30",
+      "durationMinutes": 150,
+      "segmentMinutes": [
+        65,
+        30,
+        55
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-tal-B",
+      "subjectId": "tal",
+      "title": "Talijanski jezik · osnovna (B)",
+      "session": "drugi",
+      "level": "B",
+      "part": null,
+      "localDate": "2027-09-03",
+      "startsAtLocal": "09:00",
+      "endsAtLocal": "10:40",
+      "durationMinutes": 100,
+      "segmentMinutes": [
+        75,
+        25
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-lat-A",
+      "subjectId": "lat",
+      "title": "Latinski jezik · viša (A)",
+      "session": "drugi",
+      "level": "A",
+      "part": null,
+      "localDate": "2027-09-03",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "16:00",
+      "durationMinutes": 120,
+      "segmentMinutes": [
+        120
+      ],
+      "sourceId": "drugi"
+    },
+    {
+      "id": "2027-drugi-lat-B",
+      "subjectId": "lat",
+      "title": "Latinski jezik · osnovna (B)",
+      "session": "drugi",
+      "level": "B",
+      "part": null,
+      "localDate": "2027-09-03",
+      "startsAtLocal": "14:00",
+      "endsAtLocal": "15:40",
+      "durationMinutes": 100,
+      "segmentMinutes": [
+        100
+      ],
+      "sourceId": "drugi"
+    }
+  ]
+}
