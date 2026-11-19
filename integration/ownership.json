@@ -4,6 +4,8 @@
     "administracija": {
       "identityPaths": [
         "app/admin/AdminOverview.module.css",
+        "app/admin/Workspace.jsx",
+        "app/admin/actions.js",
         "app/admin-pragovi/AdminPragoviClient.js",
         "app/admin-pragovi/page.js",
         "app/admin/ab/page.js",
@@ -1587,7 +1589,8 @@
         "supabase/migrations/20260922000000_ai_usage_ledger.sql",
         "supabase/migrations/20260922000000_sim_progress_attempt_id.sql",
         "supabase/migrations/20260922010000_sim_progress_rls_insert_only.sql",
-        "supabase/migrations/20261119163143_admin_overview_metrics.sql"
+        "supabase/migrations/20261119163143_admin_overview_metrics.sql",
+        "supabase/migrations/20261119164003_admin_operations.sql"
       ],
       "mappings": [],
       "localOnly": {}
@@ -1881,7 +1884,9 @@
     },
     "termini": {
       "identityPaths": [
-        "app/termini/page.js"
+        "app/termini/Termini2026.jsx",
+        "app/termini/page.js",
+        "content/termini/matura-2027.json"
       ],
       "mappings": [],
       "localOnly": {}
