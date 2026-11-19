@@ -110,7 +110,10 @@
     },
     "ispiti": {
       "baseCommit": "5dd41d15ce1593ba742d2f7970b6b006fa06ee9e",
-      "pathCommits": {},
+      "pathCommits": {
+        "app/discere/hrvatski/simulator/data/distraktoriData.js": "da827e9a9fddd625234f18a37ef5dda3234922aa",
+        "app/discere/hrvatski/simulator/data/exams/exam2025.js": "da827e9a9fddd625234f18a37ef5dda3234922aa"
+      },
       "deleted": []
     },
     "kalkulator": {
