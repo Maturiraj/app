@@ -120,7 +120,9 @@
     },
     "naslovnica": {
       "baseCommit": "dde5d7599270215729eb81b479d1d076dd0288e4",
-      "pathCommits": {},
+      "pathCommits": {
+        "app/page.jsx": "77a814ef8158d43bfc5f96fd994c293df20938e0"
+      },
       "deleted": []
     },
     "plan-ucenja": {

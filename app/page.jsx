@@ -1,9 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTrialState } from "@/hooks/useTrialState";
-
-import IntroScreen from "@/app/components/IntroScreen";
 
 import HeroCountdown from "@/components/landing/HeroCountdown";
 import Footer from "@/components/layout/Footer";
@@ -22,23 +19,58 @@ import CTA from "@/components/landing/CTA";
 import TrialPopup from "@/components/shared/TrialPopup";
 import TrialBanner from "@/components/shared/TrialBanner";
 
-export default function Page() {
-  const [showIntro, setShowIntro] = useState(false);
+const INTRO_SEEN = "maturiraj_intro_seen";
+const TRIAL_DISMISSED = "maturiraj_trial_dismissed";
 
-  const {
-    shown: trialShown,
-    dismissed: trialDismissed,
-    dismiss: trialDismiss,
-    mounted: trialMounted,
-  } = useTrialState();
+function readPreference(key, fallback = null) {
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return fallback;
+  }
+}
+
+function savePreference(key, value) {
+  try {
+    window.localStorage.setItem(key, value);
+  } catch {
+    // The current page still remembers the choice when persistence is unavailable.
+  }
+}
+
+function clearIntroRequest() {
+  if (new URLSearchParams(window.location.search).get("intro") === "1") {
+    window.history.replaceState(window.history.state, "", "/");
+  }
+}
+
+export default function Page() {
+  const [introRequested, setIntroRequested] = useState(false);
+  const [IntroScreen, setIntroScreen] = useState(null);
+  const [trial, setTrial] = useState("initial");
+  const trialDismissed = trial === "dismissed";
+  const showIntro = introRequested && IntroScreen !== null;
+
+  useEffect(() => {
+    if (readPreference(TRIAL_DISMISSED)) {
+      setTrial("dismissed");
+      return;
+    }
+    setTrial("banner");
+    const timer = window.setTimeout(() => {
+      setTrial(current => current === "banner" ? "popup" : current);
+    }, 30000);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  function trialDismiss() {
+    setTrial("dismissed");
+    savePreference(TRIAL_DISMISSED, "1");
+  }
 
   function startTrial() {
     trialDismiss();
     window.location.href = "/discere";
-  }
-
-  function goToIntro() {
-    window.location.href = "/?intro=1";
   }
 
   useEffect(() => {
@@ -51,17 +83,29 @@ export default function Page() {
   }, [showIntro]);
 
   useEffect(() => {
-    const hasSeenIntro =
-      localStorage.getItem("maturiraj_intro_seen") === "true";
-    const params = new URLSearchParams(window.location.search);
-    const forceIntro = params.get("intro") === "1";
-
+    const forceIntro = new URLSearchParams(window.location.search).get("intro") === "1";
+    if (!forceIntro && readPreference(INTRO_SEEN, "true") === "true") return;
     const frame = window.requestAnimationFrame(() => {
-      setShowIntro(forceIntro || !hasSeenIntro);
+      setIntroRequested(true);
     });
-
     return () => window.cancelAnimationFrame(frame);
   }, []);
+
+  useEffect(() => {
+    if (!introRequested) return;
+    let cancelled = false;
+    import("@/app/components/IntroScreen").then(
+      ({ default: Screen }) => {
+        if (!cancelled) setIntroScreen(() => Screen);
+      },
+      () => {
+        if (cancelled) return;
+        setIntroRequested(false);
+        clearIntroRequest();
+      }
+    );
+    return () => { cancelled = true; };
+  }, [introRequested]);
 
   useEffect(() => {
     if (showIntro) return;
@@ -84,12 +128,9 @@ export default function Page() {
   }, [showIntro]);
 
   const handleFinishIntro = () => {
-    localStorage.setItem("maturiraj_intro_seen", "true");
-    setShowIntro(false);
-
-    if (window.location.search.includes("intro=1")) {
-      window.history.replaceState({}, "", "/");
-    }
+    setIntroRequested(false);
+    savePreference(INTRO_SEEN, "true");
+    clearIntroRequest();
   };
 
   const goPro = (billing) => {
@@ -97,17 +138,33 @@ export default function Page() {
     window.location.href = `/pro?billing=${q}`;
   };
 
+  const skipIntro = introRequested && (
+    <button
+      type="button"
+      onClick={handleFinishIntro}
+      style={{
+        position: "fixed", bottom: "max(1rem, env(safe-area-inset-bottom))",
+        right: "1rem", zIndex: 10000, padding: "0.65rem 1rem",
+        border: "1px solid currentColor", borderRadius: "0.5rem",
+        background: "#fff", color: "#182039", cursor: "pointer",
+      }}
+    >
+      Preskoči uvod
+    </button>
+  );
+
   if (showIntro) {
-    return <IntroScreen onFinish={handleFinishIntro} />;
+    return <>{skipIntro}<IntroScreen onFinish={handleFinishIntro} /></>;
   }
 
   return (
     <>
-      {trialMounted && trialShown && !trialDismissed && (
+      {skipIntro}
+      {trial === "popup" && (
         <TrialPopup onStart={startTrial} onDismiss={trialDismiss} />
       )}
 
-      {trialMounted && !trialDismissed && (
+      {(trial === "banner" || trial === "popup") && (
         <TrialBanner onStart={startTrial} onDismiss={trialDismiss} />
       )}
 
