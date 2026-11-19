@@ -1588,6 +1588,7 @@
         "supabase/migrations/20260920000000_sim_progress_percentile_idx.sql",
         "supabase/migrations/20260922000000_ai_usage_ledger.sql",
         "supabase/migrations/20260922000000_sim_progress_attempt_id.sql",
+        "supabase/migrations/20260922000001_sim_progress_attempt_id.sql",
         "supabase/migrations/20260922010000_sim_progress_rls_insert_only.sql",
         "supabase/migrations/20261119163143_admin_overview_metrics.sql",
         "supabase/migrations/20261119164003_admin_operations.sql"
