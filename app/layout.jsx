@@ -5,6 +5,13 @@ import AnalyticsInitializer from "./components/AnalyticsInitializer";
 import ServiceWorkerRegistrar from "./components/ServiceWorkerRegistrar";
 import { AuthProvider } from "@/lib/hooks/useAuth";
 import Nav from "@/components/layout/Nav";
+import { createClient } from "@/lib/supabase/server";
+import {
+  isAiEndpointsEnabled,
+  isGameModeEnabled,
+  isParentLinkingV2Enabled,
+  isParentPortalEnabled,
+} from "@/lib/config/featureFlags";
 
 export const metadata = {
   metadataBase: new URL('https://maturiraj.hr'),
@@ -27,7 +34,28 @@ export const viewport = {
   themeColor: '#0F0605',
 };
 
-export default function RootLayout({ children }) {
+async function getParentWorkspaceUserId() {
+  const allowedEmail = process.env.DEV_BYPASS_EMAIL;
+  if (!isParentLinkingV2Enabled() || !allowedEmail) return null;
+
+  // Keep this navigation signal aligned with the current /roditelji/* proxy guard.
+  try {
+    const supabase = await createClient();
+    const { data: { user }, error } = await supabase.auth.getUser();
+    return !error && user?.email === allowedEmail ? user.id : null;
+  } catch {
+    return null;
+  }
+}
+
+export default async function RootLayout({ children }) {
+  const navigationFlags = {
+    ai: isAiEndpointsEnabled(),
+    game: isGameModeEnabled(),
+    parent: isParentPortalEnabled(),
+    parentWorkspaceUserId: await getParentWorkspaceUserId(),
+  };
+
   return (
     <html lang="hr">
       <head>
@@ -40,7 +68,7 @@ export default function RootLayout({ children }) {
       </head>
       <body suppressHydrationWarning>
         <AuthProvider>
-          <Nav noCountdown />
+          <Nav noCountdown sitewide flags={navigationFlags} />
           <AnalyticsInitializer />
           <ServiceWorkerRegistrar />
           <ScrollReset />
