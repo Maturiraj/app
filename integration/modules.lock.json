@@ -79,7 +79,12 @@
     "app": {
       "baseCommit": "0d2bb0d3be7b37f99e18130b8d4906dbda3b8e5f",
       "pathCommits": {
-        "app/components/AnalyticsInitializer.jsx": "c3c95f04fdd6653cde05b5f82acb44f7e861d5b1"
+        "app/components/AnalyticsInitializer.jsx": "c3c95f04fdd6653cde05b5f82acb44f7e861d5b1",
+        "app/layout.jsx": "19c03f54eb50ece5dd00f0d15322e4af4eb07b2c",
+        "components/layout/Nav.jsx": "19c03f54eb50ece5dd00f0d15322e4af4eb07b2c",
+        "components/layout/Nav.module.css": "19c03f54eb50ece5dd00f0d15322e4af4eb07b2c",
+        "components/layout/NavUserChip.jsx": "19c03f54eb50ece5dd00f0d15322e4af4eb07b2c",
+        "components/layout/navigation.js": "19c03f54eb50ece5dd00f0d15322e4af4eb07b2c"
       },
       "deleted": []
     },

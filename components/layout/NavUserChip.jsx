@@ -1,10 +1,12 @@
 "use client";
+import Link from "next/link";
 import { useAuth } from "@/lib/hooks/useAuth";
+import { NAV_PATHS } from "./navigation";
 
 /**
  * NavUserChip — kompaktni indikator prijavljenog korisnika.
  * Koristiti se u inline <nav> elementima (checklist, formule, termini, itd.)
- * Klikom ide na /plan-ucenja.
+ * Otvara početni pregled korisnikova računa.
  */
 export default function NavUserChip() {
   const { user, loading } = useAuth();
@@ -12,12 +14,14 @@ export default function NavUserChip() {
 
   const name =
     user.user_metadata?.full_name?.split(" ")[0] ||
-    user.email.split("@")[0];
+    user.email?.split("@")[0] ||
+    "Račun";
   const initial = name[0]?.toUpperCase() || "?";
 
   return (
-    <a
-      href="/plan-ucenja"
+    <Link
+      href={user.user_metadata?.role === "parent" ? NAV_PATHS.parent : NAV_PATHS.dashboard}
+      aria-label={`Otvori pregled računa · ${name}`}
       style={{
         display: "flex",
         alignItems: "center",
@@ -35,6 +39,7 @@ export default function NavUserChip() {
       }}
     >
       <span
+        aria-hidden="true"
         style={{
           width: 22,
           height: 22,
@@ -52,6 +57,6 @@ export default function NavUserChip() {
         {initial}
       </span>
       {name}
-    </a>
+    </Link>
   );
 }
