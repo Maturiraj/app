@@ -22,7 +22,7 @@ function keyText(question) {
   return 'Ključ nije dostupan.'
 }
 
-function ReviewedQuestion({ question, number, responses, notebook, notebookScope }) {
+function ReviewedQuestion({ question, number, responses, notebook, notebookScope, grading }) {
   const [open, setOpen] = useState(false)
   return <details className={styles.task} onToggle={event => setOpen(event.currentTarget.open)}>
     <summary className={styles.summary}>Zadatak {number}</summary>
@@ -30,10 +30,24 @@ function ReviewedQuestion({ question, number, responses, notebook, notebookScope
       <p className={styles.label}>Tvoj predani odgovor</p>
       <QuestionRenderer question={question} value={responseForQuestion(question, responses)} disabled onChange={() => {}} notebook={notebook} notebookScope={notebookScope} listeningMode="review" />
       {leaves(question).map((leaf,index) => {
+        const label=leaf===question?number:/^\d+(?:\.\d+)*$/.test(leaf.id)?leaf.id:`${number}.${index+1}`
+        if (grading) {
+          const manual = grading.manualReview?.[leaf.id]
+          const score = grading.scores?.[leaf.id]
+          return <section key={leaf.id} className={styles.key} aria-label={`Ishod zadatka ${label}`}>
+            <h3>{label} · {manual ? 'Čeka ručnu procjenu' : score === true ? 'Točno' : score === false ? 'Nije potpuno točno' : 'Bez automatske procjene'}</h3>
+            {manual && <>
+              <p className={styles.pending}>Najviše {manual.points ?? leaf.points} bodova.</p>
+              {Array.isArray(manual.rubric) && manual.rubric.length > 0 && <ul>
+                {manual.rubric.map((item, ruleIndex) => <li key={ruleIndex}>{item.points} · {item.text}</li>)}
+              </ul>}
+              {typeof manual.modelAnswer === 'string' && <p className={styles.text}>{manual.modelAnswer}</p>}
+            </>}
+          </section>
+        }
         const official = leaf.answer?.source === 'official'
         const rubric = leaf.answer?.kind === 'rubric'
         const explanation = typeof leaf.explanation === 'string' ? leaf.explanation : leaf.explanation?.text
-        const label=leaf===question?number:/^\d+(?:\.\d+)*$/.test(leaf.id)?leaf.id:`${number}.${index+1}`
         return <section key={leaf.id} className={styles.key} aria-label={`Ključ zadatka ${label}`}>
           <h3>{label} · {official ? rubric ? 'Službeni ključ i rubrika' : 'Službeni ključ' : rubric ? 'Rubrika iz sadržaja' : 'Ključ iz sadržaja'}</h3>
           {rubric && <p className={styles.pending}>Čeka ručnu procjenu · najviše {leaf.points} {leaf.points === 1 ? 'bod' : 'bodova'}. Usporedba s rubricom ne dodjeljuje bodove.</p>}
@@ -50,10 +64,10 @@ function ReviewedQuestion({ question, number, responses, notebook, notebookScope
   </details>
 }
 
-export default function ExamReview({ exam, responses, notebooks = {}, notebookScope }) {
+export default function ExamReview({ exam, responses, notebooks = {}, notebookScope, grading }) {
   return <section className={styles.review} aria-label="Pregled predanih odgovora">
     <h2>Pregled odgovora</h2>
-    <p className={styles.intro}>Otvori zadatak i usporedi predani odgovor s ključem. Ovaj pregled ne mijenja rezultat.</p>
-    {exam.questions.map((question, index) => <ReviewedQuestion key={question.id} question={question} number={/^\d+$/.test(question.id) ? question.id : index+1} responses={responses} notebook={notebooks[question.id]} notebookScope={notebookScope} />)}
+    <p className={styles.intro}>{grading ? 'Otvori zadatak za ishod predaje i kriterije ručne procjene.' : 'Otvori zadatak i usporedi predani odgovor s ključem. Ovaj pregled ne mijenja rezultat.'}</p>
+    {exam.questions.map((question, index) => <ReviewedQuestion key={question.id} question={question} number={/^\d+$/.test(question.id) ? question.id : index+1} responses={responses} notebook={notebooks[question.id]} notebookScope={notebookScope} grading={grading} />)}
   </section>
 }

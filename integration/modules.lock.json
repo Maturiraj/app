@@ -111,8 +111,17 @@
     "ispiti": {
       "baseCommit": "5dd41d15ce1593ba742d2f7970b6b006fa06ee9e",
       "pathCommits": {
+        "app/api/sim/[subject]/exam/[examKey]/route.js": "1374693a1c0a92488e0c9684b347d6b62c674e92",
+        "app/api/sim/[subject]/grade/route.js": "1374693a1c0a92488e0c9684b347d6b62c674e92",
         "app/discere/hrvatski/simulator/data/distraktoriData.js": "da827e9a9fddd625234f18a37ef5dda3234922aa",
-        "app/discere/hrvatski/simulator/data/exams/exam2025.js": "da827e9a9fddd625234f18a37ef5dda3234922aa"
+        "app/discere/hrvatski/simulator/data/exams/exam2025.js": "da827e9a9fddd625234f18a37ef5dda3234922aa",
+        "components/discere/common/ExamReview.jsx": "1374693a1c0a92488e0c9684b347d6b62c674e92",
+        "components/discere/common/ExamShell.jsx": "1374693a1c0a92488e0c9684b347d6b62c674e92",
+        "components/discere/common/GenericSubjectApp.jsx": "1374693a1c0a92488e0c9684b347d6b62c674e92",
+        "lib/discere/content-loader.js": "1374693a1c0a92488e0c9684b347d6b62c674e92",
+        "lib/discere/exam-client.js": "1374693a1c0a92488e0c9684b347d6b62c674e92",
+        "lib/discere/grade-client.js": "1374693a1c0a92488e0c9684b347d6b62c674e92",
+        "lib/discere/session-store.js": "1374693a1c0a92488e0c9684b347d6b62c674e92"
       },
       "deleted": []
     },

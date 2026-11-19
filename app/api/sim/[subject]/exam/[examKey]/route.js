@@ -33,6 +33,7 @@ import { asKeySet, getAdapter } from '@/lib/exam-secrets/registry'
 import { countLeavesIn, mergeSecretsWithAllowance, stripQuestions } from '@/lib/exam-secrets'
 import { UNLIMITED, freeLeafAllowance } from '@/lib/exam-secrets/free-policy'
 import { consumeRateLimitSlots } from '@/lib/rate-limit'
+import { canAccessBiologyExam, isBiologyExamAvailable, loadExamVersion } from '@/lib/discere/content-loader'
 import {
   FREE_EXAM_FETCH_LIMIT,
   FREE_EXAM_FETCH_WINDOW_MS,
@@ -84,6 +85,7 @@ export async function GET(request, { params } = {}) {
   const { data: auth } = await supabase.auth.getUser()
   const user = auth?.user
   if (!user) return fail('Prijava je obavezna.', 401)
+  if (subject === 'bio' && !isBiologyExamAvailable()) return fail('Predmet nije dostupan.', 404)
 
   const adapter = getAdapter(subject)
   if (!adapter) return fail('Predmet nije dostupan.', 404)
@@ -92,9 +94,14 @@ export async function GET(request, { params } = {}) {
 
   const exam = await adapter.loadPublic(examKey)
   if (!exam) return fail('Ispit ne postoji.', 404)
+  const version = subject === 'bio' ? await loadExamVersion(subject, examKey) : null
+  if (subject === 'bio' && (!version || (exam.meta?.version && exam.meta.version !== version.contentVersion))) {
+    return fail('Revizija ispita trenutno nije dostupna.', 503)
+  }
 
   const tier = await cachedTier(user.id)
   const paid = isPaidTier(tier)
+  if (subject === 'bio' && !canAccessBiologyExam(paid)) return fail('Ovaj ispit nije dostupan za tvoj paket.', 403)
 
   // Kvota dohvata za free: vježbanje mu nosi ključ za prvih FREE_LIMIT pitanja
   // (ODLUKA 5), pa bez stropa isti preview postaje ispis cijele banke — 70 poziva
@@ -129,7 +136,8 @@ export async function GET(request, { params } = {}) {
 
   const allowed = asKeySet(adapter.allowedExamKeys(tier))
   const paidMayHaveKeys = paid && (allowed === null || allowed.has(examKey))
-  const allowance = paidMayHaveKeys ? UNLIMITED : freeLeafAllowance(subject, examKey, mode)
+  // Biologija koristi poslužiteljsko ocjenjivanje za svaki paket.
+  const allowance = subject === 'bio' ? 0 : paidMayHaveKeys ? UNLIMITED : freeLeafAllowance(subject, examKey, mode)
 
   let qs = publicQs
   let merged = 0
@@ -145,7 +153,7 @@ export async function GET(request, { params } = {}) {
   const keys = merged === 0 ? 'none' : merged >= totalLeaves ? 'full' : 'partial'
 
   return NextResponse.json(
-    { key: exam.key ?? examKey, meta: exam.meta ?? {}, texts: exam.texts ?? {}, qs, keys },
+    { key: exam.key ?? examKey, meta: exam.meta ?? {}, texts: exam.texts ?? {}, qs, keys, ...version },
     { headers: HEADERS },
   )
 }

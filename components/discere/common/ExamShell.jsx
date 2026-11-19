@@ -5,6 +5,7 @@ import ExamReview from './ExamReview'
 import AssessmentDialog from './AssessmentDialog'
 import { LockedResultsBlock } from '@/components/discere/paywall'
 import { buildResult, scoreExam } from '@/lib/discere/scoring'
+import { answeredCount } from '@/lib/discere/session-store'
 
 import { responseForQuestion, mergeQuestionResponse } from '@/lib/discere/question-responses'
 import { advancePlayback, canSubmitListening, emptyPlayback, listeningQuestions } from '@/lib/learning/listening-state'
@@ -16,6 +17,10 @@ function formatTime(totalSeconds) {
   const seconds = safe % 60
   if (hours > 0) return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
   return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
+}
+
+function countLeaves(questions) {
+  return questions.reduce((count, question) => count + (question.children ? countLeaves(question.children) : 1), 0)
 }
 
 export default function ExamShell({ exam, onExit, onComplete, session, canSeeReview = true }) {
@@ -44,7 +49,9 @@ export default function ExamShell({ exam, onExit, onComplete, session, canSeeRev
   const playback=session?.view?.playback??localPlayback
   const listeningReady=canSubmitListening(questions,playback)&&Object.values(mediaStatus).every(Boolean)
   const current = questions[index]
-  const progress = useMemo(() => scoreExam(exam, responses), [exam, responses])
+  const unansweredCount = useMemo(() => session?.serverGraded
+    ? Math.max(0, countLeaves(exam.questions) - answeredCount(responses))
+    : scoreExam(exam, responses).unanswered.length, [exam, responses, session?.serverGraded])
 
   useEffect(() => {
     if (result || controlled) return undefined
@@ -74,7 +81,7 @@ export default function ExamShell({ exam, onExit, onComplete, session, canSeeRev
   }
 
   function submit() {
-    if (!listeningReady) return
+    if (!listeningReady && !session?.submissionPending) return
     if (session) {
       if (!session.busy) session.onSubmit()
       setConfirming(false)
@@ -104,6 +111,7 @@ export default function ExamShell({ exam, onExit, onComplete, session, canSeeRev
               {result.autoPossiblePoints > 0 && <><p style={{fontSize:22, fontWeight:700, margin:'4px 0'}}>{result.earnedPoints} / {result.autoPossiblePoints} bodova</p>
               <p style={{color:'var(--muted)', marginTop:4}}>Automatski dio: {result.autoPercent}%</p></>}
               <p style={{fontSize:13, color:'var(--muted)'}}>Za ručnu provjeru: {result.manualPossiblePoints} {result.manualPossiblePoints === 1 ? 'bod' : 'bodova'}. Konačni rezultat ovisi o vrednovanju tih odgovora prema pripadajućoj rubrici.</p>
+              {session?.serverGraded && <p>Puni maksimum ispita je {result.maxPoints} bodova.</p>}
             </>
           ) : (
             <>
@@ -112,9 +120,12 @@ export default function ExamShell({ exam, onExit, onComplete, session, canSeeRev
             </>
           )}
           <p style={{fontSize:13, color:'var(--muted)'}}>Neodgovoreno: {result.unansweredCount ?? result.unanswered.length}</p>
+          {session?.serverGraded && <p role="status">Rezultat je spremljen.</p>}
           <button type="button" onClick={onExit} aria-label="Izlaz" style={{marginTop:18, padding:'10px 16px', borderRadius:10, border:'1px solid var(--bdr)', background:'var(--s2)', color:'var(--text)', cursor:'pointer'}}>Izlaz</button>
         </div>
-        {canSeeReview === false
+        {session?.serverGraded
+          ? <ExamReview exam={exam} responses={responses} notebooks={notebooks} notebookScope="device" grading={result} />
+          : canSeeReview === false
           ? <div style={{maxWidth:680, margin:'24px auto'}}><LockedResultsBlock label="Pregled odgovora" note="Ocjena, postotak i bodovi ostaju besplatni. Pregled odgovora, ključevi i objašnjenja dolaze sa Standard planom." rows={5} minHeight={200} /></div>
           : (!session || session.reviewAvailable === true ? <ExamReview exam={exam} responses={responses} notebooks={notebooks} notebookScope={session ? 'device' : 'page'} /> : <p style={{ maxWidth: 680, margin: '24px auto', lineHeight: 1.65 }}>Pregled nije dostupan za ovu verziju sadržaja. Potvrđeni rezultat ostaje sačuvan.</p>)}
       </main>
@@ -145,7 +156,7 @@ export default function ExamShell({ exam, onExit, onComplete, session, canSeeRev
         </header>
 
         <div style={{display:'flex', justifyContent:'space-between', gap:12, alignItems:'center', marginBottom:12, color:'var(--muted)', fontSize:12}}>
-          <span>Neodgovoreno: {progress.unanswered.length}</span>
+          <span>Neodgovoreno: {unansweredCount}</span>
           <button type="button" onClick={toggleFlag} aria-label={isFlagged ? 'Ukloni oznaku pitanja' : 'Označi pitanje'} style={{border:'1px solid var(--bdr)', background:isFlagged ? 'var(--s2)' : 'transparent', color:'var(--text)', borderRadius:9, padding:'7px 10px', cursor:'pointer'}}>
             {isFlagged ? '★ Označeno' : '☆ Označi'}
           </button>
@@ -163,17 +174,29 @@ export default function ExamShell({ exam, onExit, onComplete, session, canSeeRev
           <div style={{flex:1}}/>
           {index < questions.length - 1 ? (
             <button type="button" onClick={() => navigate(Math.min(questions.length - 1, index + 1))} aria-label="Sljedeće" style={{padding:'11px 15px', borderRadius:10, border:0, background:'var(--blue)', color:'#fff', fontWeight:700}}>Sljedeće</button>
-          ) : (
+          ) : !session?.submissionPending && (
             <button type="button" disabled={!listeningReady} onClick={() => setConfirming(true)} aria-label="Predaj ispit" style={{padding:'11px 15px', borderRadius:10, border:0, background:'var(--blue)', color:'#fff', fontWeight:700,opacity:listeningReady?1:0.5,cursor:listeningReady?'pointer':'default'}}>Predaj ispit</button>
           )}
         </nav>
-        {!listeningReady&&<p role="status" style={{lineHeight:1.65}}>Prije predaje dovrši barem jedno slušanje svake snimke i riješi prijavljenu pogrešku zvuka. Ako zvuk nije dostupan, izađi iz provjere bez dodjele rezultata; tehnički problem nije netočan odgovor.</p>}
+        {!listeningReady&&!session?.submissionPending&&<p role="status" style={{lineHeight:1.65}}>Prije predaje dovrši barem jedno slušanje svake snimke i riješi prijavljenu pogrešku zvuka. Ako zvuk nije dostupan, izađi iz provjere bez dodjele rezultata; tehnički problem nije netočan odgovor.</p>}
+        {session?.serverGraded && <div style={{marginTop:16}}>
+          {session.error && <p role="alert">{session.error}</p>}
+          {session.savedLocally === false && <p role="status">Nacrt se ne može spremiti na ovaj uređaj. Odgovori su dostupni dok je ova stranica otvorena.</p>}
+          {session.submissionPending
+            ? <>
+                {session.savedLocally && !session.busy && <p>Nacrt je spremljen na ovom uređaju.</p>}
+                <button type="button" disabled={session.busy || session.retryIn > 0} onClick={submit}>
+                  {session.busy ? 'Šaljem predaju…' : session.retryIn > 0 ? `Ponovi predaju za ${session.retryIn} s` : 'Ponovno pošalji istu predaju'}
+                </button>
+              </>
+            : remaining === 0 && index < questions.length - 1 && <button type="button" disabled={!listeningReady} onClick={() => setConfirming(true)}>Predaj ispit</button>}
+        </div>}
       </div>
 
       {confirming && (
         <AssessmentDialog label="Potvrda predaje" onCancel={() => setConfirming(false)}>
             <h2 style={{marginTop:0}}>Želiš li predati ispit?</h2>
-            <p style={{color:'var(--muted)'}}>Neodgovoreno: {progress.unanswered.length}. Nakon predaje prikazat će se rezultat.</p>
+            <p style={{color:'var(--muted)'}}>Neodgovoreno: {unansweredCount}. Nakon predaje prikazat će se rezultat.</p>
             <div style={{display:'flex', gap:10, justifyContent:'flex-end'}}>
               <button data-dialog-cancel type="button" onClick={() => setConfirming(false)} style={{padding:'10px 14px'}}>Odustani</button>
               <button type="button" onClick={submit} disabled={Boolean(session?.busy)||!listeningReady} aria-label="Potvrdi predaju" style={{padding:'10px 14px', background:'var(--blue)', color:'#fff', border:0, borderRadius:9}}>Potvrdi predaju</button>

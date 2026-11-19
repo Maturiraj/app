@@ -44,6 +44,7 @@ import { normalizeTier, isPaidTier } from '@/lib/billing/getEffectiveTier'
 import { checkRateLimit, consumeRateLimitSlots } from '@/lib/rate-limit'
 import { getAdapter } from '@/lib/exam-secrets/registry'
 import { collectQuestionIds, stripQuestions } from '@/lib/exam-secrets'
+import { canAccessBiologyExam, isBiologyExamAvailable, loadExamVersion } from '@/lib/discere/content-loader'
 import {
   DAY_MS,
   GRADE_DAILY_BUDGET,
@@ -185,6 +186,9 @@ function asQTime(value) {
    napad treba, a legitiman korisnik ne. */
 const ATTEMPT_CACHE_MAX = 500
 const attemptCache = new Map()
+const BIOLOGY_ADMISSION_MAX = 128
+const BIOLOGY_ADMISSION_TTL_MS = 10 * 60 * 1000
+const biologyAdmissions = new Map()
 
 function readAttemptCache(key) {
   const hit = attemptCache.get(key)
@@ -199,6 +203,21 @@ function readAttemptCache(key) {
 function writeAttemptCache(key, body) {
   if (attemptCache.size >= ATTEMPT_CACHE_MAX) attemptCache.delete(attemptCache.keys().next().value)
   attemptCache.set(key, { at: Date.now(), body })
+}
+
+function readBiologyAdmission(key) {
+  const hit = biologyAdmissions.get(key)
+  if (!hit) return null
+  if (Date.now() - hit.at < BIOLOGY_ADMISSION_TTL_MS) return hit.fingerprint
+  biologyAdmissions.delete(key)
+  return null
+}
+
+function recordBiologyAdmission(key, fingerprint) {
+  if (biologyAdmissions.size >= BIOLOGY_ADMISSION_MAX) {
+    biologyAdmissions.delete(biologyAdmissions.keys().next().value)
+  }
+  biologyAdmissions.set(key, { at: Date.now(), fingerprint })
 }
 
 /** Stabilan JSON (ključevi po abecedi) — otisak ne smije ovisiti o redoslijedu. */
@@ -372,6 +391,164 @@ function progressExtras(result) {
   return out
 }
 
+function buildProgressRow(submission, exam, result, extras) {
+  const { userId, subject, examKey, examMode, answers, qTimes, durationSec, attemptId } = submission
+  const razinaRaw = exam.meta?.razinaCode ?? exam.meta?.razina
+  return {
+    user_id: userId,
+    subject,
+    exam_key: examKey,
+    exam_label: exam.meta?.fullLabel ?? exam.meta?.label ?? null,
+    razina: razinaRaw === 'A' || razinaRaw === 'B' ? razinaRaw : null,
+    pct: clampPct(result?.pct),
+    grade: result?.grade ?? null,
+    correct: Number(result?.cor) || 0,
+    total: Number(result?.total) || 0,
+    exam_mode: examMode,
+    answers,
+    q_times: qTimes,
+    topic_breakdown: isPlainObject(result?.topicBreakdown) ? result.topicBreakdown : {},
+    duration_sec: durationSec,
+    attempt_id: attemptId,
+    ...extras,
+  }
+}
+
+function biologySaveFailed() {
+  return fail('Rezultat nije spremljen. Pokušaj ponovno.', 503)
+}
+
+function biologyAttemptConflict() {
+  return fail('Ovaj identifikator pripada drugoj predaji. Otvori ispit za novi pokušaj.', 409)
+}
+
+function findBiologyProgress(db, userId, attemptId) {
+  return db.from('sim_progress')
+    .select('subject, exam_key, exam_mode, answers, q_times, duration_sec, pct, grade, correct, total')
+    .eq('user_id', userId)
+    .eq('attempt_id', attemptId)
+    .maybeSingle()
+}
+
+function matchesBiologySubmission(saved, submission) {
+  return saved.subject === submission.subject && saved.exam_key === submission.examKey
+    && saved.exam_mode === submission.examMode && saved.duration_sec === submission.durationSec
+    && stableStringify(saved.answers) === stableStringify(submission.answers)
+    && stableStringify(saved.q_times) === stableStringify(submission.qTimes)
+}
+
+function matchesBiologyProgress(saved, row, submission) {
+  return matchesBiologySubmission(saved, submission)
+    && ['pct', 'correct', 'total']
+      .every(field => saved[field] === row[field])
+    && (saved.grade ?? null) === (row.grade == null ? null : String(row.grade))
+}
+
+async function insertBiologyProgress(db, row, extraColumns) {
+  const { error } = await db.from('sim_progress').insert(row)
+  if (!extraColumns.length || !isUnknownColumn(error, extraColumns)) return error
+  // Environments on the legacy result schema still retain the unique attempt.
+  const legacy = { ...row }
+  for (const column of extraColumns) delete legacy[column]
+  const fallback = await db.from('sim_progress').insert(legacy)
+  return fallback.error
+}
+
+function buildBiologyBody(result, paid, version, attemptId, secrets) {
+  const body = buildBody(result, paid)
+  const manual = Object.fromEntries(Object.entries(body.review?.manual ?? {}).map(([id, fields]) => {
+    // The canonical biology store keeps manual rubrics under answer.rubric.
+    // Only the allowed post-submission rubric is projected from that object.
+    const rubric = secrets[id]?.answer?.rubric
+    return [id, {
+      points: fields.points,
+      ...(typeof fields.modelAnswer === 'string' && { modelAnswer: fields.modelAnswer }),
+      ...(Array.isArray(rubric) && {
+        rubric: rubric.flatMap(item => typeof item?.text === 'string' && Number.isFinite(item.points)
+          ? [{ text: item.text, points: item.points }]
+          : []),
+      }),
+    }]
+  }))
+  const manualPossiblePoints = Object.values(manual).reduce((sum, task) => sum + (task.points ?? 0), 0)
+  const { earned_points, max_points, manual_pending, unanswered } = result.progressRow
+  return {
+    ...body,
+    ...version,
+    attemptId,
+    serverSaved: true,
+    review: { manual },
+    summary: {
+      earnedPoints: earned_points,
+      maxPoints: max_points,
+      autoPossiblePoints: max_points - manualPossiblePoints,
+      manualPossiblePoints,
+      manualPending: manual_pending,
+      unanswered,
+    },
+  }
+}
+
+async function gradeBiology({ db, submission, version, exam, adapter, publicQs, paid, loadSecretsOrFail }) {
+  const { userId, attemptId, subject, examKey, examMode, answers, qTimes, durationSec } = submission
+  const revisionSuffix = createHash('sha256').update(JSON.stringify([version.revision, version.contentVersion]))
+    .digest('hex').slice(0, 20)
+  if (!attemptId.endsWith(`-${revisionSuffix}`)) return biologyAttemptConflict()
+
+  const cacheKey = `bio-admission|${userId}|${attemptId}`
+  const fingerprint = createHash('sha256').update(stableStringify({
+    subject, examKey, examMode, ...version, answers, qTimes, durationSec,
+  })).digest('hex')
+
+  try {
+    const admitted = readBiologyAdmission(cacheKey)
+    const prior = await findBiologyProgress(db, userId, attemptId)
+    if (prior.error) return biologySaveFailed()
+    if ((admitted && admitted !== fingerprint) || (prior.data && !matchesBiologySubmission(prior.data, submission))) {
+      return biologyAttemptConflict()
+    }
+
+    // A browser-owned progress row alone does not prove quota admission.
+    // The in-process marker permits retries after an interrupted save. A
+    // different process must still consult the normal limits.
+    if (!admitted) {
+      const limit = await checkRateLimit(userId, `sim-grade:${subject}:${examKey}`, GRADE_MIN_INTERVAL_MS)
+      if (limit.limited) {
+        return fail(`Pokušaj ponovno za ${limit.retryAfterSec} s.`, 429, { 'Retry-After': String(limit.retryAfterSec) })
+      }
+      // QA biology does not distribute keys to any tier, so protection
+      // against repeated probing applies to every new biology attempt.
+      const budget = await consumeBudgetSlot(userId, subject, examKey, examMode)
+      if (!budget.ok) {
+        return fail('Iskorišten je dnevni budžet za ovaj ispit. Pokušaj ponovno nakon isteka ograničenja.', 429,
+          { 'Retry-After': String(budget.retryAfterSec) })
+      }
+      recordBiologyAdmission(cacheKey, fingerprint)
+    }
+
+    const secrets = await loadSecretsOrFail()
+    if (!secrets) return fail('Ispit se trenutačno ne može ocijeniti. Pokušaj ponovno.', 503)
+    const result = await adapter.score(publicQs, secrets, answers)
+    const extras = progressExtras(result)
+    const row = buildProgressRow(submission, exam, result, extras)
+    let saved = prior.data
+    if (!saved) {
+      // A missing attempt_id remains a save failure even on the legacy
+      // result schema. Retrying without the ID cannot guarantee one row.
+      const error = await insertBiologyProgress(db, row, Object.keys(extras))
+      if (error) {
+        const persisted = await findBiologyProgress(db, userId, attemptId)
+        if (persisted.error || !persisted.data) return biologySaveFailed()
+        saved = persisted.data
+      }
+    }
+    if (saved && !matchesBiologyProgress(saved, row, submission)) return biologyAttemptConflict()
+    return NextResponse.json(buildBiologyBody(result, paid, version, attemptId, secrets), { headers: HEADERS })
+  } catch {
+    return biologySaveFailed()
+  }
+}
+
 export async function POST(request, { params } = {}) {
   const resolved = await params
   const subject = resolved?.subject ?? ''
@@ -400,6 +577,8 @@ export async function POST(request, { params } = {}) {
   const { data: auth } = await supabase.auth.getUser()
   const user = auth?.user
   if (!user) return fail('Prijava je obavezna.', 401)
+  const biology = subject === 'bio'
+  if (biology && !isBiologyExamAvailable()) return fail('Predmet nije dostupan.', 404)
 
   const adapter = getAdapter(subject)
   if (!adapter) return fail('Predmet nije dostupan.', 404)
@@ -409,10 +588,24 @@ export async function POST(request, { params } = {}) {
 
   const tier = normalizeTier(await getUserTier(user.id))
   const paid = isPaidTier(tier)
+  let version = null
+  if (biology) {
+    if (!canAccessBiologyExam(paid)) return fail('Ovaj ispit nije dostupan za tvoj paket.', 403)
+    if (typeof body.revision !== 'string' || typeof body.contentVersion !== 'string') {
+      return fail('Za predaju ispita potrebna je revizija sadržaja.', 400)
+    }
+    version = await loadExamVersion(subject, examKey)
+    if (!version || (exam.meta?.version && exam.meta.version !== version.contentVersion)) {
+      return fail('Revizija ispita trenutno nije dostupna.', 503)
+    }
+    if (body.revision !== version.revision || body.contentVersion !== version.contentVersion) {
+      return fail('Ova revizija ispita više nije dostupna.', 409)
+    }
+  }
 
   // Ponovljeni attemptId vraća ISTI odgovor i ne troši ni limit ni budžet.
   const cacheKey = `${user.id}|${subject}|${examKey}|${attemptId}`
-  const cached = readAttemptCache(cacheKey)
+  const cached = biology ? null : readAttemptCache(cacheKey)
   if (cached) return NextResponse.json(buildBody(cached, paid), { headers: HEADERS })
 
   const publicQs = stripQuestions(exam.qs, adapter.publicFields)
@@ -423,6 +616,7 @@ export async function POST(request, { params } = {}) {
   const questionIds = collectQuestionIds(publicQs)
   const answers = pickKnown(body.answers, questionIds)
   const qTimes = pickKnown(sentQTimes, questionIds, asQTime)
+  const submission = { userId: user.id, subject, examKey, attemptId, examMode, answers, qTimes, durationSec }
 
   /** Tajni store se čita tek kad je jasno da se doista ocjenjuje. */
   const loadSecretsOrFail = async () => {
@@ -430,6 +624,9 @@ export async function POST(request, { params } = {}) {
     if (secrets) return secrets
     console.error(`[sim/grade] ${subject}/${examKey}: nema tajnog storea, ocjenjivanje nije moguće.`)
     return null
+  }
+  if (biology) {
+    return gradeBiology({ db: supabase, submission, version, exam, adapter, publicQs, paid, loadSecretsOrFail })
   }
 
   const prior = await findPriorAttempt(supabase, user.id, subject, examKey, attemptId)
@@ -498,36 +695,11 @@ export async function POST(request, { params } = {}) {
   if (!secrets) return fail('Ispit se trenutačno ne može ocijeniti.', 500)
 
   const result = await adapter.score(publicQs, secrets, answers)
-  // sim_progress.razina zna samo za 'A'/'B'. Predmet čija je vlastita oznaka
-  // razine drukčija (engleski: 'visa'/'osnovna') daje `meta.razinaCode`; bez
-  // njega bi stupac tiho ostao prazan za sve njegove retke.
-  const razinaRaw = exam.meta?.razinaCode ?? exam.meta?.razina
-  const razina = razinaRaw === 'A' || razinaRaw === 'B' ? razinaRaw : null
-
   // Dodatni stupci rezultata v2 stižu samo od adaptera koji ih daje (canonical);
   // engleski i sociologija upisuju isti redak kao i prije.
   const extras = progressExtras(result)
 
-  const insertError = await insertProgress(supabase, {
-    user_id: user.id,
-    subject,
-    exam_key: examKey,
-    // `fullLabel` je naziv kakav predmet piše u povijest ("2024. — Ljetni rok");
-    // `label` je kratak naziv za UI. Predmet koji ih ne razlikuje daje samo label.
-    exam_label: exam.meta?.fullLabel ?? exam.meta?.label ?? null,
-    razina,
-    pct: clampPct(result?.pct),
-    grade: result?.grade ?? null,
-    correct: Number(result?.cor) || 0,
-    total: Number(result?.total) || 0,
-    exam_mode: examMode,
-    answers,
-    q_times: qTimes,
-    topic_breakdown: isPlainObject(result?.topicBreakdown) ? result.topicBreakdown : {},
-    duration_sec: durationSec,
-    attempt_id: attemptId,
-    ...extras,
-  }, Object.keys(extras))
+  const insertError = await insertProgress(supabase, buildProgressRow(submission, exam, result, extras), Object.keys(extras))
   if (insertError) {
     // Rezultat je izračunat i točan; izgubljeno je samo trajno spremanje.
     // Odbiti ga ovdje značilo bi korisniku pojesti pokušaj zbog tuđeg kvara.
