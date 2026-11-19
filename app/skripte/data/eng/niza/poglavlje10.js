@@ -1186,7 +1186,7 @@ const CH10_BODY = `<div class="shell">
         <span class="hero-badge hb-level">ni&#382;a razina</span>
         <span class="hero-badge hb-chapter">10 / 12</span>
       </div>
-      <p class="hero-sub">Struktura &middot; Signal words &middot; Uvod &middot; Body &middot; Zaklju&#269;ak &middot; Email &middot; Esej</p>
+      <p class="hero-sub">Maturalna poruka (80–100 riječi) &middot; Primjer i provjera &middot; Dodatne vježbe pisanja</p>
       <div class="progress-track"><div class="progress-bar" style="width:83%"></div></div>
     </div>
 
@@ -1198,15 +1198,15 @@ const CH10_BODY = `<div class="shell">
       <span class="pill pill-red">&#268;este gre&#353;ke</span>
     </div>
 
-    <div class="sec-label">// at a glance &mdash; tipovi pisanja na maturi</div>
+    <div class="sec-label">// maturalna poruka i dodatne vježbe pisanja</div>
     <div class="stat-grid">
-      <div class="stat-card"><div class="stat-icon lime">ESE</div><div class="stat-name">Kratki esej</div><div class="stat-desc">120&ndash;180 rije&#269;i &middot; uvod + body + zaklju&#269;ak &middot; formalno</div></div>
-      <div class="stat-card"><div class="stat-icon sky">EML</div><div class="stat-name">Email / pismo</div><div class="stat-desc">Formalno ili neformalno &middot; jasna svrha &middot; strukturirano</div></div>
-      <div class="stat-card"><div class="stat-icon violet">OPN</div><div class="stat-name">Mi&#353;ljenje / opinion</div><div class="stat-desc">Stav + argumenti + primjeri + zaklju&#269;ak</div></div>
-      <div class="stat-card"><div class="stat-icon amber">REP</div><div class="stat-name">Kratko izvje&#353;&#263;e</div><div class="stat-desc">Neutralan ton &middot; &#269;injenice &middot; bez osobnih stavova</div></div>
+      <div class="stat-card"><div class="stat-icon lime">MAT</div><div class="stat-name">Maturalna poruka</div><div class="stat-desc">80–100 riječi &middot; odgovori na sve odrednice &middot; prilagodi ton primatelju</div></div>
+      <div class="stat-card"><div class="stat-icon sky">ESE</div><div class="stat-name">Dodatna vježba &middot; esej</div><div class="stat-desc">120–180 riječi &middot; uvod + argumenti + zaključak</div></div>
+      <div class="stat-card"><div class="stat-icon violet">OPN</div><div class="stat-name">Dodatna vježba &middot; mišljenje</div><div class="stat-desc">Stav + argumenti + primjeri + zaklju&#269;ak</div></div>
+      <div class="stat-card"><div class="stat-icon amber">REP</div><div class="stat-name">Dodatna vježba &middot; izvješće</div><div class="stat-desc">Neutralan ton &middot; &#269;injenice &middot; bez osobnih stavova</div></div>
     </div>
 
-    <div class="sec-label">// key concepts</div>
+    <div class="sec-label">// pojmovi za dodatne vježbe pisanja</div>
     <div class="concepts">
       <div class="concept-row"><div class="ck lime">Struktura</div><div class="cv">Uvod (hook + teza) &rarr; Body (1&ndash;2 odlomka s argumentima) &rarr; Zaklju&#269;ak (summary + finale)</div></div>
       <div class="concept-row"><div class="ck sky">Signal words</div><div class="cv">Kontrast: however, although &middot; Dodavanje: furthermore, in addition &middot; Uzrok: therefore, as a result</div></div>
@@ -1219,25 +1219,25 @@ const CH10_BODY = `<div class="shell">
     <div class="panic-box">
       <div class="panic-hd">&#x1F9E0; panic-proof &mdash; pisanje na ispitu</div>
       <div class="panic-body">
-        <div class="panic-step"><div class="panic-num">1</div><div class="panic-text"><b>Plan PRIJE pisanja</b> &mdash; 2 minute: uvod, 2 argumenta, zaklju&#269;ak. Bez plana = kaoti&#269;an tekst.</div></div>
-        <div class="panic-step"><div class="panic-num">2</div><div class="panic-text"><b>Signal words</b> &mdash; svaka nova ideja = signal word. However, Furthermore, Therefore, In addition, In conclusion.</div></div>
-        <div class="panic-step"><div class="panic-num">3</div><div class="panic-text"><b>Zaklju&#269;ak = summary</b> &mdash; nikad nova informacija! Restate teza druk&#269;ijim rije&#269;ima + zavr&#353;na misao.</div></div>
+        <div class="panic-step"><div class="panic-num">1</div><div class="panic-text"><b>Prije pisanja</b> pročitaj polaznu uputu. Označi primatelja, svrhu poruke i sve odrednice na koje trebaš odgovoriti.</div></div>
+        <div class="panic-step"><div class="panic-num">2</div><div class="panic-text"><b>U poruci</b> jasno odgovori na svaku odrednicu. Prilagodi pozdrav, izraze i završetak primatelju.</div></div>
+        <div class="panic-step"><div class="panic-num">3</div><div class="panic-text"><b>Prije predaje</b> provjeri jesu li svi odgovori jasni, je li jezik razumljiv i imaš li od 80 do 100 riječi.</div></div>
       </div>
     </div>
     <div style="margin-top:10px;padding:9px 13px;background:var(--amber-dim);border:1px solid var(--amber-border);border-radius:var(--r2);font-size:12.5px;color:var(--amber)">
-      &#x26A0; <b>Word count:</b> NCVVO B razina traži <b>120&ndash;180 rije&#269;i</b>. Manje = zadatak nije ispunjen. Vi&#353;e = rizik penalizacije. Broji prije predaje!
+      <b>Državna matura 2026./2027., osnovna razina:</b> napiši poruku od <b>80 do 100 riječi</b> prema polaznoj uputi. Odgovori na sve odrednice zadatka. <a href="https://www.ncvvo.hr/wp-content/uploads/2026/09/ENG-2027.pdf#page=49" target="_blank" rel="noopener noreferrer">Ispitni katalog NCVVO-a, str. 49</a>.
     </div>
 
 
     <div class="sec-label">// 5-second recall</div>
     <div class="reveal-card" onclick="toggleReveal(this)" role="button" aria-expanded="false" tabindex="0">
-      <div class="reveal-q"><span>Koja je osnovna struktura kratkog eseja?</span><span class="reveal-arrow">&#x25BC;</span></div>
+      <div class="reveal-q"><span>Kako je strukturirana dodatna vježba kratkog eseja?</span><span class="reveal-arrow">&#x25BC;</span></div>
       <div class="reveal-ans">
         <b>Uvod &rarr; Body &rarr; Zaklju&#269;ak</b><br><br>
         <b>Uvod</b> (2&ndash;3 re&#269;enice): hook rje&#269;enica, kontekst, teza (glavni stav)<br>
         <b>Body</b> (2&ndash;4 odlomka): svaki = 1 argument + primjer/dokaz<br>
         <b>Zaklju&#269;ak</b> (2&ndash;3 re&#269;enice): In conclusion/To sum up + restate teze + zavr&#353;na misao<br><br>
-        Na ni&#382;oj razini mature: 120&ndash;180 rije&#269;i, 3&ndash;4 odlomka, 2 argumenta dovoljna.
+        Za dodatnu vježbu u ovoj lekciji napiši esej od 120 do 180 riječi i razradi dva argumenta.
       </div>
     </div>
     <div class="reveal-card" onclick="toggleReveal(this)" role="button" aria-expanded="false" tabindex="0">
@@ -1246,7 +1246,7 @@ const CH10_BODY = `<div class="shell">
     </div>
     <div class="reveal-card" onclick="toggleReveal(this)" role="button" aria-expanded="false" tabindex="0">
       <div class="reveal-q"><span>Formalno vs neformalno pisanje &mdash; razlika</span><span class="reveal-arrow">&#x25BC;</span></div>
-      <div class="reveal-ans"><b>Formalno</b> (email, esej): puni oblici · pasiv · bez slanga<br><span class="ok">I am writing · I would like to · Yours faithfully</span><br><b>Neformalno</b>: kratice · izravnost · <span class="ok">I'm writing · Thanks · Best</span><br>B razina: uvijek formalno na ispitu!</div>
+      <div class="reveal-ans"><b>Formalno</b> (email, esej): puni oblici · pasiv · bez slanga<br><span class="ok">I am writing · I would like to · Yours faithfully</span><br><b>Neformalno</b>: kratice · izravnost · <span class="ok">I'm writing · Thanks · Best</span><br>Na ispitu ton poruke ovisi o primatelju i svrsi zadatka.</div>
     </div>
     <div class="reveal-card" onclick="toggleReveal(this)" role="button" aria-expanded="false" tabindex="0">
       <div class="reveal-q"><span>&#268;esta gre&#353;ka: novi argument u zaklju&#269;ku</span><span class="reveal-arrow">&#x25BC;</span></div>
@@ -1288,8 +1288,8 @@ const CH10_BODY = `<div class="shell">
   <!-- ══ LAYER 1 — LEARN ══ -->
   <div class="layer" id="l1">
 
-    <div class="sec-label">// struktura kratkog eseja &mdash; odlomak po odlomak</div>
-    <p class="prose">Svaki tip pisanog zadatka na maturi ima istu temeljnu strukturu. Nauči je jednom &mdash; vrijedi za esej, email, opinion tekst i izvje&#353;&#263;e.</p>
+    <div class="sec-label">// dodatna vježba &mdash; struktura kratkog eseja</div>
+    <p class="prose">Za format osnovne razine pogledaj <a href="#poruka-b-model">ogled maturalne poruke od 80 do 100 riječi</a>. U nastavku prvo vježbaš kako razviti argumente u duljem tekstu.</p>
 
     <div class="tbl-wrap">
       <table>
@@ -1325,7 +1325,7 @@ const CH10_BODY = `<div class="shell">
 
     <!-- ANNOTATED SAMPLE ESSAY -->
     <hr class="divider">
-    <div class="sec-label">// anotiran primjer &mdash; opinion esej s komentarima</div>
+    <div class="sec-label">// dodatna vježba &mdash; opinion esej s komentarima</div>
     <p class="prose" style="margin-bottom:8px">Pro&#269;itaj esej i pazi na ozna&#269;ene dijelove &mdash; svaka boja ima zna&#269;enje.</p>
 
     <div class="anno-legend">
@@ -1337,7 +1337,7 @@ const CH10_BODY = `<div class="shell">
     </div>
 
     <div class="sample-text">
-      <div class="sample-title">TASK: "Should young people spend a year abroad before university? Write an opinion essay (120&ndash;180 words)."</div>
+      <div class="sample-title">DODATNA VJEŽBA: Should young people spend a year abroad before university? Write an opinion essay (120–180 words).</div>
       <div class="sample-meta">
         <span class="sm-tag" style="background:var(--lime-dim);color:var(--lime);border-color:var(--lime-border)">Opinion essay</span>
         <span class="sm-tag" style="background:var(--sky-dim);color:var(--sky);border-color:var(--sky-border)">~155 words</span>
@@ -1419,7 +1419,7 @@ const CH10_BODY = `<div class="shell">
     <!-- FORMALNO vs NEFORMALNO EMAIL -->
     <hr class="divider">
     <div class="sec-label">// email &mdash; formalno vs neformalno</div>
-    <p class="prose" style="margin-bottom:14px">Na ispitu mo&#382;e&#353; dobiti zadatak pisanja emaila. Klju&#269;no je prepoznati ton koji se tra&#382;i.</p>
+    <p class="prose" style="margin-bottom:14px">Na osnovnoj razini pišeš poruku prema uputi. Iz nje prepoznaj tko je primatelj i koji ton odgovara svrsi poruke.</p>
 
     <div class="compare">
       <div class="cmp-card">
@@ -1446,8 +1446,8 @@ const CH10_BODY = `<div class="shell">
 
     <!-- USEFUL PHRASES -->
     <hr class="divider">
-        <div class="sec-label">// anotiran primjer &mdash; neformalni email</div>
-    <p class="prose" style="margin-bottom:8px">Pro&#269;itaj email i pazi na ozna&#269;ene dijelove &mdash; svaka boja ima zna&#269;enje.</p>
+        <div class="sec-label" id="poruka-b-model">// ogled maturalne poruke &mdash; primjer formalne e-pošte</div>
+    <p class="prose" style="margin-bottom:8px">Prvo pokušaj napisati svoju poruku. Zatim usporedi kako primjer pokriva svaku odrednicu i prilagođava ton primatelju.</p>
 
     <div class="anno-legend">
       <div class="al-item"><div class="al-dot" style="background:var(--lime)"></div> Pozdrav / uvod</div>
@@ -1458,16 +1458,16 @@ const CH10_BODY = `<div class="shell">
     </div>
 
     <div class="sample-text">
-      <div class="sample-title">TASK: &ldquo;You saw an advertisement for a summer language course in the UK. Write an email to the school asking for more information. (100&ndash;120 words)&rdquo;</div>
+      <div class="sample-title">VJEŽBA U MATURALNOM FORMATU: You saw an advertisement for a summer English course. Write an email to the school in 80–100 words. Explain why you want to take the course, ask about dates and fees, and ask about accommodation.</div>
       <div class="sample-meta">
         <span class="sm-tag" style="background:var(--sky-dim);color:var(--sky);border-color:var(--sky-border)">Formalni email</span>
-        <span class="sm-tag" style="background:var(--lime-dim);color:var(--lime);border-color:var(--lime-border)">~110 words</span>
+        <span class="sm-tag" style="background:var(--lime-dim);color:var(--lime);border-color:var(--lime-border)">80–100 words</span>
         <span class="sm-tag" style="background:var(--amber-dim);color:var(--amber);border-color:var(--amber-border)">Enquiry</span>
       </div>
       <p><span class="anno" style="background:var(--lime-dim);border-color:var(--lime-border)">Dear Sir or Madam,</span></p>
-      <p><span class="anno" style="background:var(--sky-dim);border-color:var(--sky-border)">I am writing to enquire about the summer English language courses advertised on your website.</span> I am a secondary school student from Croatia and I am very interested in improving my English before the end of the academic year.</p>
-      <p><span class="anno" style="background:var(--violet-dim);border-color:var(--violet-border)">Could you please send me more information about the course dates, duration, and fees?</span> <span class="anno" style="background:var(--amber-dim);border-color:var(--amber-border)">I would also like to know whether accommodation is included in the price, and what the daily schedule looks like.</span></p>
-      <p>I look forward to hearing from you.</p>
+      <p><span class="anno" style="background:var(--sky-dim);border-color:var(--sky-border)">I am writing about the summer English courses advertised on your website.</span> I am a secondary school student from Croatia and would like to improve my spoken English during the summer holidays.</p>
+      <p><span class="anno" style="background:var(--violet-dim);border-color:var(--violet-border)">Could you tell me when the courses start and how much they cost?</span> <span class="anno" style="background:var(--amber-dim);border-color:var(--amber-border)">I would also like to know whether students stay with a host family or in a residence. I would prefer to stay with a family so that I can practise English outside class.</span></p>
+      <p>Thank you for your help.</p>
       <p><span class="anno" style="background:var(--red-dim);border-color:var(--red-border)">Yours faithfully,<br>Ana Horvat</span></p>
     </div>
 
@@ -1475,9 +1475,9 @@ const CH10_BODY = `<div class="shell">
       <div style="font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--lime);margin-bottom:10px">// za&#353;to ovaj email funkcionira</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px">
         <div><span style="color:var(--lime);font-weight:600">&#x2713; Pozdrav:</span> <span style="color:var(--t2)">Dear Sir or Madam &mdash; ne znamo ime &rarr; Yours faithfully (ne sincerely!)</span></div>
-        <div><span style="color:var(--sky);font-weight:600">&#x2713; Svrha odmah:</span> <span style="color:var(--t2)">I am writing to enquire &mdash; prva re&#269;enica govori ZA&#352;TO pi&#353;em</span></div>
-        <div><span style="color:var(--violet);font-weight:600">&#x2713; Zahtjev:</span> <span style="color:var(--t2)">Could you please... &mdash; u&#269;tivo, ne: &ldquo;Send me info.&rdquo;</span></div>
-        <div><span style="color:var(--amber);font-weight:600">&#x2713; Detalji:</span> <span style="color:var(--t2)">Dvije konkretne stvari &mdash; datumi/cijene + smje&#353;taj</span></div>
+        <div><span style="color:var(--sky);font-weight:600">&#x2713; Svrha odmah:</span> <span style="color:var(--t2)">Navodi razlog pisanja i objašnjava zašto želi pohađati tečaj.</span></div>
+        <div><span style="color:var(--violet);font-weight:600">&#x2713; Zahtjev:</span> <span style="color:var(--t2)">Uljudno pita o datumima i cijeni.</span></div>
+        <div><span style="color:var(--amber);font-weight:600">&#x2713; Detalji:</span> <span style="color:var(--t2)">Pita o smještaju i navodi gdje bi najradije boravila.</span></div>
         <div><span style="color:var(--red);font-weight:600">&#x2713; Kraj:</span> <span style="color:var(--t2)">Yours faithfully &mdash; bez skra&#263;enica, bez &ldquo;Bye!&rdquo;</span></div>
         <div><span style="color:var(--t3);font-weight:600">&#x274C; Izbjegavaj:</span> <span style="color:var(--t2)">I want info. / Send me details. / Hi! / Bye! / it&rsquo;s / I&rsquo;m</span></div>
       </div>
@@ -1502,12 +1502,12 @@ const CH10_BODY = `<div class="shell">
     <div class="radar">
       <div class="radar-hd">&#x1F4E1; matura radar &mdash; pisanje na ispitu</div>
       <div class="radar-body">
-        <div class="radar-item"><div class="radar-badge rb-trap">GRE&#352;KA 1</div><div class="radar-text"><b>Novi argument u zaklju&#269;ku</b><br>Zaklju&#269;ak = SAMO summary + restate teze. Svaki novi argument gubi bodove.</div></div>
-        <div class="radar-item"><div class="radar-badge rb-trap">GRE&#352;KA 2</div><div class="radar-text"><b>Skra&#263;enice u formalnom tekstu</b><br>don&#39;t &rarr; do not &middot; it&#39;s &rarr; it is &middot; I&#39;m &rarr; I am. Svaka skra&#263;enica u formalnom = greška.</div></div>
-        <div class="radar-item"><div class="radar-badge rb-trap">GRE&#352;KA 3</div><div class="radar-text"><b>Nema signal words</b><br>Bez "however", "furthermore", "therefore" tekst zvu&#269;i kao lista re&#269;enica, ne esej. Minimum 3 signal words.</div></div>
-        <div class="radar-item"><div class="radar-badge rb-trap">GRE&#352;KA 4</div><div class="radar-text"><b>Prekratak / predugi tekst</b><br>Ni&#382;a razina: 120&ndash;180 rije&#269;i. Ispod 120 = automatski odbitak. Iznad 200 = gubi&#353; vrijeme i&#268;esto grije&#353;i&#353;.</div></div>
-        <div class="radar-item"><div class="radar-badge rb-trap">GRE&#352;KA 5</div><div class="radar-text"><b>Nedovoljno odgovoreno na zadatak</b><br>Pro&#269;itaj zadatak 2x &mdash; odgovori na SVE to&#269;ke koje se tra&#382;e. Ignorirani bullet point = izgubljeni bodovi.</div></div>
-        <div class="radar-item"><div class="radar-badge rb-where">GDJE</div><div class="radar-text"><b>Pisanje:</b> opinion esej &middot; email / pismo &middot; kratko izvje&#353;&#263;e &middot; opis<br><b>Kriteriji:</b> sadr&#382;aj (relevantnost) &middot; organizacija (struktura) &middot; jezik (vokabular + gramatika) &middot; ton</div></div>
+        <div class="radar-item"><div class="radar-badge rb-trap">GRE&#352;KA 1</div><div class="radar-text"><b>Novi argument u zaklju&#269;ku</b><br>Zaklju&#269;ak = SAMO summary + restate teze. Ovaj savjet primijeni u dodatnoj vježbi eseja.</div></div>
+        <div class="radar-item"><div class="radar-badge rb-trap">GRE&#352;KA 2</div><div class="radar-text"><b>Skra&#263;enice u formalnom tekstu</b><br>U formalnoj poruci radije piši pune oblike: do not, it is, I am.</div></div>
+        <div class="radar-item"><div class="radar-badge rb-trap">GRE&#352;KA 3</div><div class="radar-text"><b>Nema signal words</b><br>Poveži misli tako da primatelj može lako pratiti poruku. Veznike biraj prema smislu.</div></div>
+        <div class="radar-item"><div class="radar-badge rb-trap">GRE&#352;KA 4</div><div class="radar-text"><b>Prekratak / predugi tekst</b><br>Na osnovnoj razini napiši od 80 do 100 riječi.</div></div>
+        <div class="radar-item"><div class="radar-badge rb-trap">GRE&#352;KA 5</div><div class="radar-text"><b>Nedovoljno odgovoreno na zadatak</b><br>Pro&#269;itaj zadatak 2x &mdash; odgovori na SVE to&#269;ke koje se tra&#382;e. Provjeri odgovara li svaki dio tvoje poruke na konkretnu odrednicu.</div></div>
+        <div class="radar-item"><div class="radar-badge rb-where">GDJE</div><div class="radar-text"><b>Maturalno pisanje:</b> poruka prema polaznoj uputi. Provjeri potpunost odgovora, povezanost, razumljivost jezika i ton.</div></div>
       </div>
     </div>
 
@@ -1533,7 +1533,7 @@ const CH10_BODY = `<div class="shell">
   <!-- ══ LAYER 2 — PRACTICE ══ -->
   <div class="layer" id="l2">
 
-    <div class="quiz-intro"><strong>// writing knowledge quiz</strong> &middot; 10 pitanja o pisanju, strukturi i signal words. Target: <strong>8/10</strong> ili bolje.</div>
+    <div class="quiz-intro"><strong>// dodatni kviz &mdash; vještine pisanja</strong> &middot; 10 pitanja o pisanju, strukturi i signal words. Target: <strong>8/10</strong> ili bolje.</div>
     <div class="kbd-hint">&#x2328;&#xFE0F; Tipke <span class="kbd">1</span><span class="kbd">2</span><span class="kbd">3</span><span class="kbd">4</span> biraju odgovor</div>
 
     <div class="writing-q" id="q1"><div class="wq-num">01 / 10 &middot; struktura &middot; uvod</div><div class="wq-q">&#352;to treba sadr&#382;avati dobar uvodni odlomak kratkog eseja?</div><div class="wq-opts"><div class="wq-opt" onclick="ans(this,'q1',false)" tabindex="0"><span class="wq-letter">A</span> Svi argumenti koje &#263;e&#353; koristiti u tekstu.</div><div class="wq-opt" onclick="ans(this,'q1',true)" tabindex="0"><span class="wq-letter">B</span> Hook rje&#269;enica, kratki kontekst i teza (stav/svrha).</div><div class="wq-opt" onclick="ans(this,'q1',false)" tabindex="0"><span class="wq-letter">C</span> Zaklju&#269;ak i summary tema koje &#263;e&#353; obra&#273;iti.</div><div class="wq-opt" onclick="ans(this,'q1',false)" tabindex="0"><span class="wq-letter">D</span> Detaljni primjeri i statisti&#269;ki podaci.</div></div><div class="wq-expl" id="q1e"></div></div>
@@ -1548,7 +1548,7 @@ const CH10_BODY = `<div class="shell">
 
     <div class="writing-q" id="q6"><div class="wq-num">06 / 10 &middot; signal words &middot; uzrok-posljedica</div><div class="wq-q">Koji signal word pokazuje <em>uzrok&ndash;posljedicu</em> (dakle, stoga)?</div><div class="wq-opts"><div class="wq-opt" onclick="ans(this,'q6',false)" tabindex="0"><span class="wq-letter">A</span> Furthermore</div><div class="wq-opt" onclick="ans(this,'q6',false)" tabindex="0"><span class="wq-letter">B</span> However</div><div class="wq-opt" onclick="ans(this,'q6',true)" tabindex="0"><span class="wq-letter">C</span> Therefore</div><div class="wq-opt" onclick="ans(this,'q6',false)" tabindex="0"><span class="wq-letter">D</span> Although</div></div><div class="wq-expl" id="q6e"></div></div>
 
-    <div class="writing-q" id="q7"><div class="wq-num">07 / 10 &middot; formalno pisanje</div><div class="wq-q">Koje je pravilo formalnog pisanog teksta na ispitu?</div><div class="wq-opts"><div class="wq-opt" onclick="ans(this,'q7',false)" tabindex="0"><span class="wq-letter">A</span> Skra&#263;enice su prihvatljive u formalnom tekstu.</div><div class="wq-opt" onclick="ans(this,'q7',false)" tabindex="0"><span class="wq-letter">B</span> Uvijek pi&#353;i u prvom licu jednine (I think, I believe).</div><div class="wq-opt" onclick="ans(this,'q7',false)" tabindex="0"><span class="wq-letter">C</span> Kolokvijalizam je prihvatljiv ako je tekst kratak.</div><div class="wq-opt" onclick="ans(this,'q7',true)" tabindex="0"><span class="wq-letter">D</span> Bez skra&#263;enica &middot; akademski vokabular &middot; neutralan ton.</div></div><div class="wq-expl" id="q7e"></div></div>
+    <div class="writing-q" id="q7"><div class="wq-num">07 / 10 &middot; formalno pisanje</div><div class="wq-q">Što odgovara formalnom stilu pisanja?</div><div class="wq-opts"><div class="wq-opt" onclick="ans(this,'q7',false)" tabindex="0"><span class="wq-letter">A</span> Skra&#263;enice su prihvatljive u formalnom tekstu.</div><div class="wq-opt" onclick="ans(this,'q7',false)" tabindex="0"><span class="wq-letter">B</span> Uvijek pi&#353;i u prvom licu jednine (I think, I believe).</div><div class="wq-opt" onclick="ans(this,'q7',false)" tabindex="0"><span class="wq-letter">C</span> Kolokvijalizam je prihvatljiv ako je tekst kratak.</div><div class="wq-opt" onclick="ans(this,'q7',true)" tabindex="0"><span class="wq-letter">D</span> Bez skra&#263;enica &middot; akademski vokabular &middot; neutralan ton.</div></div><div class="wq-expl" id="q7e"></div></div>
 
     <div class="writing-q" id="q8"><div class="wq-num">08 / 10 &middot; signal words &middot; zaklju&#269;ak</div><div class="wq-q">Koji signal words signaliziraju zaklju&#269;ni odlomak?</div><div class="wq-opts"><div class="wq-opt" onclick="ans(this,'q8',true)" tabindex="0"><span class="wq-letter">A</span> In conclusion / To sum up</div><div class="wq-opt" onclick="ans(this,'q8',false)" tabindex="0"><span class="wq-letter">B</span> However / On the other hand</div><div class="wq-opt" onclick="ans(this,'q8',false)" tabindex="0"><span class="wq-letter">C</span> Furthermore / In addition</div><div class="wq-opt" onclick="ans(this,'q8',false)" tabindex="0"><span class="wq-letter">D</span> For example / For instance</div></div><div class="wq-expl" id="q8e"></div></div>
 
@@ -1601,7 +1601,7 @@ const CH10_BODY = `<div class="shell">
     </div>
 
         <hr class="divider">
-    <div class="sec-label">// sentence building &mdash; stvori re&#269;enicu</div>
+    <div class="sec-label">// dodatna vježba &mdash; stvori rečenicu</div>
     <p class="prose" style="margin-bottom:14px">Napi&#353;i re&#269;enicu. Zatim otvori model i usporedi &mdash; bez gledanja unaprijed. Nema jednog to&#269;nog odgovora &mdash; va&#382;no je pokriti klju&#269;ni element.</p>
 
     <div style="background:var(--bg-card);border:1px solid var(--bd-mid);border-radius:var(--r3);padding:16px 18px;margin-bottom:14px">
@@ -1643,16 +1643,16 @@ const CH10_BODY = `<div class="shell">
 <!-- CTA -->
     <hr class="divider">
     <div class="sec-label">// &#x2713; checklist &mdash; provjeri prije predaje</div>
-    <p class="prose" style="margin-bottom:14px">Zadnje 2 minute ispita: pro&#269;itaj ovaj checklist. Svaka to&#269;ka = potencijalni bod.</p>
+    <p class="prose" style="margin-bottom:14px">Na kraju pročitaj poruku još jednom i provjeri je prema uputi zadatka.</p>
     <div class="radar">
       <div class="radar-hd">&#x2713; pre-submission checklist</div>
       <div class="radar-body">
-        <div class="radar-item"><div class="radar-badge" style="background:var(--lime-dim);color:var(--lime);border-color:var(--lime-border)">BROJ</div><div class="radar-text"><b>Broj rije&#269;i: 120&ndash;180</b><br>Prebroj! Ispod 120 = automatski odbitak. Iznad 200 = gubi&#353; bodove za preciznost i obi&#269;no grije&#353;i&#353; vi&#353;e.</div></div>
-        <div class="radar-item"><div class="radar-badge" style="background:var(--sky-dim);color:var(--sky);border-color:var(--sky-border)">ZADATAK</div><div class="radar-text"><b>Odgovorio si na SVE to&#269;ke zadatka?</b><br>Provjeri svaki bullet point u zadatku. Svaka neodgovorena to&#269;ka = izgubljeni bodovi za sadr&#382;aj.</div></div>
-        <div class="radar-item"><div class="radar-badge" style="background:var(--violet-dim);color:var(--violet);border-color:var(--violet-border)">SIGNAL</div><div class="radar-text"><b>Minimum 3 signal words?</b><br>Provjeri: imaš li However / Furthermore / Therefore / In conclusion ili slične? Bez signal words tekst nema koheziju.</div></div>
-        <div class="radar-item"><div class="radar-badge" style="background:var(--amber-dim);color:var(--amber);border-color:var(--amber-border)">ZAKLJU&#268;AK</div><div class="radar-text"><b>Zaklju&#269;ak bez novog argumenta?</b><br>Pro&#269;itaj zadnji odlomak: uvodi li ne&#353;to novo? Ako da &mdash; bri&#353;i ili premjesti u body.</div></div>
-        <div class="radar-item"><div class="radar-badge" style="background:var(--red-dim);color:var(--red);border-color:var(--red-border)">FORMALNO</div><div class="radar-text"><b>Bez skra&#263;enica (formalni tekst)?</b><br>Tra&#382;i: don&#39;t, it&#39;s, I&#39;m, can&#39;t, won&#39;t &mdash; svaku zamijeni punim oblikom. 30 sekundi, vrijedi!</div></div>
-        <div class="radar-item"><div class="radar-badge" style="background:var(--lime-dim);color:var(--lime);border-color:var(--lime-border)">STRUKTURA</div><div class="radar-text"><b>Svaki odlomak ima topic sentence?</b><br>Provjeri prvu re&#269;enicu svakog body odlomka &mdash; najavljuje li jasno temu odlomka?</div></div>
+        <div class="radar-item"><div class="radar-badge" style="background:var(--lime-dim);color:var(--lime);border-color:var(--lime-border)">BROJ</div><div class="radar-text"><b>Broj riječi: 80–100</b><br>Prebroji riječi i po potrebi dopuni ili sažmi poruku.</div></div>
+        <div class="radar-item"><div class="radar-badge" style="background:var(--sky-dim);color:var(--sky);border-color:var(--sky-border)">ZADATAK</div><div class="radar-text"><b>Odgovorio si na SVE to&#269;ke zadatka?</b><br>Provjeri svaki bullet point u zadatku. Označi mjesto u poruci na kojem odgovaraš na svaku odrednicu.</div></div>
+        <div class="radar-item"><div class="radar-badge" style="background:var(--violet-dim);color:var(--violet);border-color:var(--violet-border)">SIGNAL</div><div class="radar-text"><b>Jesu li misli povezane?</b><br>Pročitaj poruku redom i provjeri razumije li se veza među idejama.</div></div>
+        <div class="radar-item"><div class="radar-badge" style="background:var(--amber-dim);color:var(--amber);border-color:var(--amber-border)">ZAVRŠETAK</div><div class="radar-text"><b>Odgovara li završetak poruci?</b><br>Odaberi završnu rečenicu i pozdrav prema svrsi i primatelju.</div></div>
+        <div class="radar-item"><div class="radar-badge" style="background:var(--red-dim);color:var(--red);border-color:var(--red-border)">TON</div><div class="radar-text"><b>Odgovara li ton primatelju?</b><br>Provjeri pozdrav, način obraćanja i izraze koje si odabrao.</div></div>
+        <div class="radar-item"><div class="radar-badge" style="background:var(--lime-dim);color:var(--lime);border-color:var(--lime-border)">STRUKTURA</div><div class="radar-text"><b>Je li odmah jasno zašto pišeš?</b><br>Provjeri može li primatelj lako pronaći svaku bitnu informaciju.</div></div>
       </div>
     </div>
 
@@ -1665,14 +1665,12 @@ const CH10_BODY = `<div class="shell">
     <div class="matura">
       <div class="matura-hd">&#x2B50; for the exam &mdash; key points</div>
       <ul class="matura-list">
-        <li class="m-item"><div class="m-dot"></div><span><b>Plan PRIJE pisanja</b>: 2 minute za plan &rarr; uvod, 2 argumenta, zaklju&#269;ak. Bez plana = kaoti&#269;an tekst.</span></li>
-        <li class="m-item"><div class="m-dot"></div><span><b>Struktura</b>: uvod (hook + teza) &rarr; body (topic sentence + dokaz) &rarr; zaklju&#269;ak (summary + finale).</span></li>
-        <li class="m-item"><div class="m-dot"></div><span><b>Signal words</b>: min. 3 u tekstu. However (kontrast) &middot; Furthermore (dodavanje) &middot; Therefore (uzrok) &middot; In conclusion (kraj).</span></li>
-        <li class="m-item"><div class="m-dot"></div><span><b>Zaklju&#269;ak</b>: NIKAD novi argument. Samo summary + restate teze + zavr&#353;na misao.</span></li>
-        <li class="m-item"><div class="m-dot"></div><span><b>Formalno</b>: bez skra&#263;enica &middot; bez And/But na po&#269;etku re&#269;enice &middot; akademski vokabular &middot; neutralan ton.</span></li>
-        <li class="m-item"><div class="m-dot"></div><span><b>Email</b>: Dear + ime/Sir/Madam &rarr; svrha &rarr; body &rarr; I look forward to... &rarr; Yours sincerely/faithfully.</span></li>
-        <li class="m-item"><div class="m-dot"></div><span><b>Broj rije&#269;i</b>: 120&ndash;180. Prebroj! Ispod 120 = automatski odbitak. Iznad 200 = gubi&#353; vrijeno.</span></li>
-        <li class="m-item"><div class="m-dot"></div><span><b>Provjera</b>: skra&#263;enice, signal words, novi argument u zaklju&#269;ku, odgovoreno na sve to&#269;ke zadatka.</span></li>
+        <li class="m-item"><div class="m-dot"></div><span><b>Plan</b> &middot; prepoznaj primatelja, svrhu i sve odrednice polazne upute.</span></li>
+        <li class="m-item"><div class="m-dot"></div><span><b>Struktura</b> &middot; jasno odgovori na svaku odrednicu i poveži odgovore u poruku.</span></li>
+        <li class="m-item"><div class="m-dot"></div><span><b>Povezanost</b> &middot; biraj veznike prema značenju i koristi ih gdje pomažu čitatelju.</span></li>
+        <li class="m-item"><div class="m-dot"></div><span><b>Ton</b> &middot; prilagodi pozdrav, obraćanje i završetak primatelju.</span></li>
+        <li class="m-item"><div class="m-dot"></div><span><b>Duljina</b> &middot; napiši poruku od 80 do 100 riječi.</span></li>
+        <li class="m-item"><div class="m-dot"></div><span><b>Provjera</b> &middot; provjeri odgovore na sve odrednice, razumljivost, pravopis i broj riječi.</span></li>
       </ul>
     </div>
 

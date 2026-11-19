@@ -402,7 +402,7 @@ a{color:inherit;text-decoration:none}
     <div class="sec-label">// struktura ispita — reading i listening</div>
     <div class="stat-grid">
       <div class="stat-card"><div class="stat-icon blue">Cj. 1</div><div class="stat-name">Reading — 3 teksta</div><div class="stat-desc">3 dulja teksta, različiti žanrovi. Multiple choice, T/F/NG, matching headings. Ukupno ~40 min.</div></div>
-      <div class="stat-card"><div class="stat-icon green">Cj. 4+5</div><div class="stat-name">Listening — 4 snimke</div><div class="stat-desc">4 audio snimke, rastuća težina. Multiple choice, sentence completion, short answer. Jednom slušaš!</div></div>
+      <div class="stat-card"><div class="stat-icon green">Cj. 4+5</div><div class="stat-name">Listening — 4 snimke</div><div class="stat-desc">4 audio snimke, rastuća težina. Multiple choice, sentence completion, short answer. Svaki tekst slušaš dvaput.</div></div>
       <div class="stat-card"><div class="stat-icon gold">skim</div><div class="stat-name">Skimming = brz pregled</div><div class="stat-desc">Čitaš za opću ideju, ne svaku riječ. Naslovi, prve i zadnje rečenice odlomaka. ~1–2 min po tekstu.</div></div>
       <div class="stat-card"><div class="stat-icon violet">scan</div><div class="stat-name">Scanning = traženje</div><div class="stat-desc">Tražiš specifičnu informaciju (datum, ime, broj). Oči klize po tekstu dok ne nađeš ključnu riječ.</div></div>
     </div>
@@ -433,11 +433,11 @@ a{color:inherit;text-decoration:none}
       <div class="reveal-ans">
         <b>Faza 1 — PRIJE slušanja (pauza):</b><br>
         Čitaj pitanja i opcije. Podvuci ključne riječi. Predvidi o čemu je snimka.<br><br>
-        <b>Faza 2 — ZA VRIJEME slušanja:</b><br>
-        Prati redoslijed pitanja. Piši odgovor odmah kad ga čuješ. Ne zadržavaj se na jednom pitanju — kreni dalje.<br><br>
-        <b>Faza 3 — POSLIJE slušanja (pauza):</b><br>
+        <b>Faza 2 — DVA slušanja svakog teksta:</b><br>
+        Pri prvom slušanju prati smisao teksta i zabilježi odgovore za koje imaš osnovu. Označi nejasna pitanja i nastavi. Pri drugom slušanju dopuni propušteno i provjeri nejasne odgovore.<br><br>
+        <b>Faza 3 — POSLIJE drugog slušanja:</b><br>
         Provjeri odgovore. Provjeri spelling u sentence completion zadacima. Ne mijenjaj odgovor bez razloga.<br><br>
-        <span class="bad">Zamka:</span> Ako propustiš odgovor, ne paniciraj — zaokruži najvjerojatnijeg i nastavi dalje.
+        <span class="bad">Zamka:</span> Ako prvi put propustiš odgovor, označi pitanje i vrati mu se pri drugom slušanju.
       </div>
     </div>
     <div class="reveal-card" onclick="toggleReveal(this)" role="button" aria-expanded="false">
@@ -648,7 +648,7 @@ a{color:inherit;text-decoration:none}
 
     <!-- LISTENING STRATEGIJA -->
     <div id="sec-listening-strategy" class="sec-label" style="margin-top:36px">// listening — 3-fazna strategija</div>
-    <p class="prose">Listening je <em>jednosmjeran</em> — snimku čuješ samo jednom. Zato je priprema prije slušanja apsolutno ključna.</p>
+    <p class="prose">Na višoj razini mature 2026./2027. <strong>svaki tekst slušaš dvaput</strong>. Prvo slušanje iskoristi za razumijevanje teksta i prve odgovore, a drugo za provjeru i dopunu. <a href="https://www.ncvvo.hr/wp-content/uploads/2026/09/ENG-2027.pdf#page=17" target="_blank" rel="noopener noreferrer">Ispitni katalog NCVVO-a, str. 17</a>.</p>
     <div class="task-block">
       <div class="tb-head">
         <span class="tb-badge listening">LISTENING</span>
@@ -659,21 +659,21 @@ a{color:inherit;text-decoration:none}
           <div class="step">
             <div class="step-num" style="background:var(--brit-green)">1</div>
             <div class="step-body">
-              <div class="step-title">PRIJE — Priprema u pauzi <span style="font-family:var(--mono);font-size:11px;color:var(--t3)">(30–60 sek pauze)</span></div>
+              <div class="step-title">PRIJE — Priprema u pauzi</div>
               <div class="step-desc">Čitaj pitanja i opcije. Podvuci ključne riječi. Predvidi temu i tip informacije (broj? ime? razlog?). Pripremi se na parafraziranje — točan odgovor neće biti iste riječi.</div>
             </div>
           </div>
           <div class="step">
             <div class="step-num" style="background:var(--brit-green)">2</div>
             <div class="step-body">
-              <div class="step-title">ZA VRIJEME — Aktivno slušanje <span style="font-family:var(--mono);font-size:11px;color:var(--t3)">(trajanje snimke)</span></div>
-              <div class="step-desc">Prati redoslijed pitanja — odgovori dolaze redoslijedom. Piši odgovor čim ga čuješ. Propustio/la jedno? Zaokruži najvjerojatnije i odmah nastavi na sljedeće pitanje.</div>
+              <div class="step-title">ZA VRIJEME — Prvo i drugo slušanje</div>
+              <div class="step-desc"><strong>Prvi put:</strong> prati temu i redoslijed pitanja. Zapiši odgovore koje možeš potkrijepiti i označi mjesta na kojima nisi siguran. <strong>Drugi put:</strong> usredotoči se na označena pitanja i provjeri pojedinosti koje mijenjaju smisao odgovora.</div>
             </div>
           </div>
           <div class="step">
             <div class="step-num" style="background:var(--brit-green)">3</div>
             <div class="step-body">
-              <div class="step-title">POSLIJE — Provjera u pauzi <span style="font-family:var(--mono);font-size:11px;color:var(--t3)">(pauza između snimki)</span></div>
+              <div class="step-title">POSLIJE DRUGOG SLUŠANJA — Završna provjera</div>
               <div class="step-desc">Provjeri spelling u sentence completion. Provjeri gramatički oblik (singular/plural, tense). Provjeri broj riječi ako je naveden limit. Ne mijenjaj odgovor bez konkretnog razloga.</div>
             </div>
           </div>
@@ -829,10 +829,9 @@ a{color:inherit;text-decoration:none}
       <div class="q-expl" id="qe6"><div class="expl-ok">✓ Točno — Topic sentence (prva) otkriva glavnu ideju odlomka, zadnja je zaključak. Naslov mora odgovarati CIJELOM odlomku, ne jednom detalju iz sredine. Opcija D je zamka — ključna riječ iz naslova može biti u tekstu ali u krivu kontekstu.</div></div>
     </div>
 
-    <div class="
     <!-- LISTENING DRILL -->
-    <div style="font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:2px;color:var(--t3);text-transform:uppercase;margin:32px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--bd)">// listening drill &mdash; transkript s pitanjima</div>
-    <p style="font-size:13px;color:var(--t2);font-family:var(--mono);margin-bottom:6px">Na pravom ispitu slušaš snimku &mdash; ovdje čitaš transkript i treniš iste vještine. Radi kao da slušaš: <b>čitaj jedanput, odgovori, provjeri.</b></p>
+    <div style="font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:2px;color:var(--t3);text-transform:uppercase;margin:32px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--bd)">// dodatna vježba &mdash; transkript s pitanjima</div>
+    <p style="font-size:13px;color:var(--t2);font-family:var(--mono);margin-bottom:6px">Ovo je dodatna vježba uz transkript. Za samostalan rad pročitaj tekst, odgovori i drugi put provjeri označena pitanja. Za vježbu slušanja zamoli nekoga da ti dvaput pročita isti tekst dok ti gledaš samo pitanja.</p>
     <div style="background:var(--amber-dim);border:1px solid var(--amber-border);border-radius:var(--r2);padding:9px 14px;font-family:var(--mono);font-size:11.5px;color:var(--amber);margin-bottom:16px">&#9888;&#65039; Listening strategija: PROČITAJ PITANJA 7&ndash;11 ISPOD PRIJE nego počneš čitati transkript.</div>
 
     <div style="background:var(--bg-card);border:1px solid var(--bd-mid);border-radius:var(--r4);overflow:hidden;margin-bottom:20px">
@@ -848,7 +847,7 @@ a{color:inherit;text-decoration:none}
         <p style="margin-bottom:12px"><b style="color:var(--t3);font-family:var(--mono);font-size:11px">VODITELJ:</b> Despite that, I understand the project is expanding?</p>
         <p style="margin-bottom:0"><b style="color:var(--t3);font-family:var(--mono);font-size:11px">CLARA:</b> Yes &mdash; we&#39;re opening a second site in Clifton next month. We&#39;ve already signed the lease and we&#39;re hoping to run weekend workshops there from the autumn.</p>
       </div>
-      <div style="padding:8px 18px;background:var(--bg-input);border-top:1px solid var(--bd);font-family:var(--mono);font-size:10px;color:var(--t3)">Čitaj jedanput. Zatim odgovori na pitanja &mdash; pa provjeri.</div>
+      <div style="padding:8px 18px;background:var(--bg-input);border-top:1px solid var(--bd);font-family:var(--mono);font-size:10px;color:var(--t3)">Prvo odgovori na pitanja, a pri ponovnom čitanju provjeri označena mjesta.</div>
     </div>
 
     <div class="q-block" id="q7">
@@ -867,7 +866,7 @@ a{color:inherit;text-decoration:none}
 
     <div class="q-block" id="q8" style="margin-top:12px">
       <div class="q-head">
-        <div class="q-meta">pitanje 08 &middot; listening &middot; sentence completion (max 2 words)</div>
+        <div class="q-meta">pitanje 08 &middot; listening &middot; sentence completion (max 3 words)</div>
         <div class="q-text">Clara first started urban farming on a rooftop with a plot of only __________ .</div>
       </div>
       <div class="q-opts">

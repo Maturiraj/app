@@ -322,13 +322,13 @@ const BODY_HTML = `<a class="skip-link" href="#main">Preskoči na sadržaj</a>
       </details>
       
       <details class="ncvvo-detail">
-        <summary class="ncvvo-summary"><span class="ncvvo-num">4.</span>Premalo riječi (&lt;150) ⭐</summary>
-        <div class="ncvvo-body">Sažetak ispod 150 riječi obično preskače ključne ideje. <strong>Rješenje:</strong> ciljaj 170-190 riječi. Pisanje ide po formuli „glavna ideja + 1-2 ključna detalja" za svaki paragraf originala.</div>
+        <summary class="ncvvo-summary"><span class="ncvvo-num">4.</span>Premalo riječi (&lt;200) ⭐</summary>
+        <div class="ncvvo-body">Ako imaš manje od 200 riječi, provjeri nedostaje li glavna ideja ili važna veza među idejama. Dopuni sažetak sadržajem iz polaznog teksta.</div>
       </details>
       
       <details class="ncvvo-detail">
-        <summary class="ncvvo-summary"><span class="ncvvo-num">5.</span>Previše riječi (&gt;200) ⭐</summary>
-        <div class="ncvvo-body">Predugačak sažetak nije sažetak. Gubi suštinu kompresije. <strong>Rješenje:</strong> ako prijeđeš 200, briši nepotrebne primjere i objašnjenja.</div>
+        <summary class="ncvvo-summary"><span class="ncvvo-num">5.</span>Previše riječi (&gt;250) ⭐</summary>
+        <div class="ncvvo-body">Ako prijeđeš 250 riječi, izbaci sporedne primjere, ponavljanja i suvišna objašnjenja.</div>
       </details>
       
       <details class="ncvvo-detail">
@@ -348,7 +348,7 @@ const BODY_HTML = `<a class="skip-link" href="#main">Preskoči na sadržaj</a>
       
       <details class="ncvvo-detail">
         <summary class="ncvvo-summary"><span class="ncvvo-num">9.</span>Pogrešna kompresija</summary>
-        <div class="ncvvo-body">Sažetak koji je 50% originala (predug) ili 5% (prekratak). <strong>Rješenje:</strong> ciljaj 15-25% originala. Original 800r → sažetak 160r.</div>
+        <div class="ncvvo-body">Zadrži glavne ideje i važne veze među njima. Završni tekst provjeri prema zadanom rasponu od 200 do 250 riječi.</div>
       </details>
       
       <details class="ncvvo-detail">
@@ -427,18 +427,18 @@ const BODY_HTML = `<a class="skip-link" href="#main">Preskoči na sadržaj</a>
       </div>
       
       <div style="padding:14px;background:var(--ele);border:1px solid var(--bd);border-radius:var(--r1)">
-        <div class="cap-mono-gold">150-200 RIJEČI ⭐</div>
-        <div style="font-family:var(--display);font-size:14px;font-weight:700;color:var(--gold);margin-bottom:8px">Idealna duljina</div>
+        <div class="cap-mono-gold">200–250 RIJEČI ⭐</div>
+        <div style="font-family:var(--display);font-size:14px;font-weight:700;color:var(--gold);margin-bottom:8px">Duljina na maturi</div>
         <div style="font-size:12px;color:var(--t2);line-height:1.6">
-          Manje od 150 = penalizacija. Više od 200 = penalizacija. <strong>Sweet spot: 170-190.</strong>
+          Na državnoj maturi 2026./2027. napiši sažetak od <strong>200 do 250 riječi</strong>. <a href="https://www.ncvvo.hr/wp-content/uploads/2026/09/HRV-2027.pdf#page=23" target="_blank" rel="noopener noreferrer">Ispitni katalog NCVVO-a, str. 23</a>.
         </div>
       </div>
       
       <div style="padding:14px;background:var(--ele);border:1px solid var(--bd);border-radius:var(--r1)">
-        <div class="cap-mono-gold">20% PRAVILO ⭐</div>
+        <div class="cap-mono-gold">ODABIR BITNOGA ⭐</div>
         <div style="font-family:var(--display);font-size:14px;font-weight:700;color:var(--gold);margin-bottom:8px">Kompresija</div>
         <div style="font-size:12px;color:var(--t2);line-height:1.6">
-          Sažetak je <strong>~20% originala</strong>. Original 800r → sažetak 160r. Original 1000r → sažetak 200r.
+          Izdvoji glavne ideje i poveži ih svojim riječima. Na kraju prebroji riječi prema zadanoj duljini.
         </div>
       </div>
       
@@ -582,7 +582,7 @@ const BODY_HTML = `<a class="skip-link" href="#main">Preskoči na sadržaj</a>
     
     <div class="pravilo-box">
       <div class="pravilo-header">📋 Što izvlačiš, što izbacuješ</div>
-      <div class="pravilo-desc">Sažetak je <strong>20% originala</strong>. To znači da 80% sadržaja IDE U KOŠ. Treba znati što je ključno, što sporedno.</div>
+      <div class="pravilo-desc">Sažetak od <strong>200 do 250 riječi</strong> zadržava glavne ideje i važne veze među njima. Izostavi sporedne primjere i ponavljanja.</div>
       <div class="ex-label-ok">✅ ŠTO ULAZI U SAŽETAK</div>
       <ul class="list-mono-int">
         <li><strong>Glavna teza ili tema</strong> teksta</li>
@@ -626,7 +626,7 @@ const BODY_HTML = `<a class="skip-link" href="#main">Preskoči na sadržaj</a>
       <div class="pravilo-desc">Revizija lovi <strong>pravopisne i interpunkcijske greške</strong>, <strong>plagijat</strong>, <strong>subjektivne fraze</strong>, <strong>krivi word count</strong>.</div>
       <div class="ex-label-ok">✅ REVIZIJA CHECKLIST</div>
       <ul class="list-mono-int">
-        <li><strong>Word count:</strong> 150-200 riječi?</li>
+        <li><strong>Word count:</strong> 200–250 riječi?</li>
         <li><strong>Plagijat:</strong> nema 5+ uzastopnih riječi iz originala?</li>
         <li><strong>Objektivnost:</strong> nema „mislim da", „po mom mišljenju"?</li>
         <li><strong>Sve glavne ideje uključene:</strong> 3-5 ključnih ideja?</li>
@@ -883,14 +883,14 @@ const BODY_HTML = `<a class="skip-link" href="#main">Preskoči na sadržaj</a>
     <div class="sec-hdr mt-32"><div class="sec-line"></div><div class="sec-badge">🚫 4. NE — Krivi word count ⭐</div><div class="sec-line"></div></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0">
       <div style="padding:14px;background:rgba(224,82,82,.04);border:1px solid var(--bd);border-left:3px solid var(--red);border-radius:var(--r1)">
-        <div class="cap-mono-gold" style="color:var(--red)">PREMALO &lt;150r</div>
+        <div class="cap-mono-gold" style="color:var(--red)">PREMALO &lt;200r</div>
         <div style="font-family:var(--display);font-size:14px;font-weight:700;color:var(--red);margin-bottom:8px">Posljedica</div>
-        <div style="font-size:12.5px;color:var(--t2);line-height:1.6">Sigurno preskačeš ključne ideje. Penalizacija minimum -2 boda.</div>
+        <div style="font-size:12.5px;color:var(--t2);line-height:1.6">Provjeri jesi li izostavio glavnu ideju ili važnu vezu među idejama.</div>
       </div>
       <div style="padding:14px;background:rgba(224,82,82,.04);border:1px solid var(--bd);border-left:3px solid var(--red);border-radius:var(--r1)">
-        <div class="cap-mono-gold" style="color:var(--red)">PREVIŠE &gt;200r</div>
+        <div class="cap-mono-gold" style="color:var(--red)">PREVIŠE &gt;250r</div>
         <div style="font-family:var(--display);font-size:14px;font-weight:700;color:var(--red);margin-bottom:8px">Posljedica</div>
-        <div style="font-size:12.5px;color:var(--t2);line-height:1.6">Predug sažetak gubi smisao kompresije. Penalizacija -1 do -3.</div>
+        <div style="font-size:12.5px;color:var(--t2);line-height:1.6">Skrati ponavljanja i sporedne primjere.</div>
       </div>
     </div>
 
@@ -960,7 +960,7 @@ const BODY_HTML = `<a class="skip-link" href="#main">Preskoči na sadržaj</a>
     <div class="box-int">
       <div class="box-int-lbl">📝 Glavni feature H28</div>
       <div class="box-int-txt">
-        <strong>Interaktivni urednik za sažetke.</strong> 10 polaznih tekstova (4 tipa: esejistički, novinski, znanstveni, književni). <strong>Split-screen</strong> — original lijevo, tvoj sažetak desno. <strong>🚨 Plagijat detektor</strong> automatski detektira kopirane segmente (5+ riječi). <strong>⚖️ Objektivnost check</strong> upozorava na subjektivne fraze. Word counter + kompresija %. Auto-save 5s. Modelni sažetak za usporedbu. Realna simulacija mature.
+        <strong>Interaktivni urednik za sažetke.</strong> 10 polaznih tekstova (4 tipa: esejistički, novinski, znanstveni, književni). <strong>Split-screen</strong> — original lijevo, tvoj sažetak desno. <strong>🚨 Plagijat detektor</strong> automatski detektira kopirane segmente (5+ riječi). <strong>⚖️ Objektivnost check</strong> upozorava na subjektivne fraze. Word counter + kompresija %. Auto-save 5s. Ogledi za usporedbu s tvojim sažetkom. Cjelovit ogled za zadanu duljinu nalazi se uz tekst „Hrvatska kultura između tradicije i suvremenosti”.
       </div>
     </div>
 
@@ -1253,8 +1253,8 @@ const BODY_HTML = `<a class="skip-link" href="#main">Preskoči na sadržaj</a>
         <li><strong style="color:var(--red)">Plagijat</strong> — 5+ uzastopnih riječi iz originala</li>
         <li><strong style="color:var(--red)">Prepričavanje</strong> — sažetak nije pripovijest, već ekstrakt</li>
         <li><strong style="color:var(--red)">Subjektivnost</strong> — bez „mislim da", „smatram"</li>
-        <li><strong style="color:var(--red)">Premalo riječi</strong> (&lt;150) — penalizacija</li>
-        <li><strong style="color:var(--red)">Previše riječi</strong> (&gt;200) — penalizacija</li>
+        <li><strong style="color:var(--red)">Premalo riječi</strong> (&lt;200) — izvan zadanog raspona</li>
+        <li><strong style="color:var(--red)">Previše riječi</strong> (&gt;250) — izvan zadanog raspona</li>
         <li><strong style="color:var(--red)">Gubitak ideje</strong> — sve glavne ideje moraju biti tu</li>
         <li><strong style="color:var(--red)">Dodavanje</strong> — ne izmišljaj informacije</li>
         <li><strong style="color:var(--red)">Mijenjanje slijeda</strong> — slijedi original</li>
@@ -7228,15 +7228,15 @@ const CP_ITEMS=[
 
 const DIAG0_Q=[
   {q:\`Koliko vremena imaš za pisanje sažetka na maturi?\`,o:[\`oko 60 minuta\`,\`4 sata\`],t:0,e:\`Sažetak ima zasebno vrijeme od oko 60 minuta. Esej dobiva 4 sata.\`},
-  {q:\`Koliko riječi ima dobar sažetak?\`,o:[\`150-200 riječi\`,\`350-450 riječi\`],t:0,e:\`Sažetak je 150-200 riječi (cca 1/4 originala). 350-450 je esej.\`},
+  {q:\`Koliko riječi treba imati sažetak na državnoj maturi 2026./2027.?\`,o:[\`200–250 riječi\`,\`350-450 riječi\`],t:0,e:\`Ispitna uputa za sažetak traži od 200 do 250 riječi.\`},
   {q:\`Koja je glavna razlika između sažetka i prepričavanja?\`,o:[\`Sažetak komprimira ključne ideje, prepričavanje slijedi originalnu strukturu\`,\`Nema razlike\`],t:0,e:\`Sažetak izvlači SAMO ključne ideje, ne slijedi original rečenicu po rečenicu.\`},
   {q:\`Smije li sažetak imati subjektivne komentare?\`,o:[\`NE — sažetak je objektivan\`,\`DA — moraš dati svoje mišljenje\`],t:0,e:\`Sažetak je strogo OBJEKTIVAN. Bez „mislim da", „po mom mišljenju", „autor je u pravu".\`},
   {q:\`Što je „plagijat" u sažetku?\`,o:[\`Doslovno preuzimanje 5+ riječi iz originala\`,\`Korištenje sinonima\`],t:0,e:\`Plagijat = kopiranje 5+ uzastopnih riječi. Sažetak mora biti tvojim riječima.\`},
-  {q:\`Koja je idealna kompresija?\`,o:[\`15-25% originala\`,\`50% originala\`],t:0,e:\`Sažetak treba imati ~20% riječi originala (npr. 800r → 160r).\`},
+  {q:\`Kako skratiti polazni tekst?\`,o:[\`Zadržati glavne ideje i njihove veze\`,\`Prepoloviti svaki odlomak\`],t:0,e:\`Izdvoji bitne ideje, izostavi sporedne detalje i provjeri raspon od 200 do 250 riječi.\`},
   {q:\`Koji je 1. korak pisanja sažetka?\`,o:[\`Pažljivo čitanje originala (2-3x)\`,\`Odmah pisati\`],t:0,e:\`Krenuti pisati bez čitanja je najveća greška. Sažetak zahtjeva 2-3 čitanja.\`},
   {q:\`Što je „glavna ideja" paragrafa?\`,o:[\`Centralna tvrdnja koju ostatak paragrafa potkrjepljuje\`,\`Prva rečenica\`],t:0,e:\`Glavna ideja je SUŠTINA — ono što paragraf zapravo želi reći. Često, ali ne uvijek, prva rečenica.\`},
   {q:\`Što je parafraziranje?\`,o:[\`Reprodukcija ideje u TVOJIM riječima\`,\`Doslovno preuzimanje\`],t:0,e:\`Parafraziranje = ista ideja, drugi izraz. Suprotno od kopiranja.\`},
-  {q:\`Koliko paragrafa treba sažetak od 200 riječi?\`,o:[\`1-2 paragrafa\`,\`5+ paragrafa\`],t:0,e:\`Kratki sažetak = 1-2 kompaktna paragrafa. Više paragrafa razgrađuje koherenciju.\`},
+  {q:\`Kako rasporediti ideje u sažetku?\`,o:[\`Povezati srodne ideje u smislene cjeline\`,\`Svaku rečenicu staviti u novi odlomak\`],t:0,e:\`Odlomci trebaju pratiti smisleni tijek ideja.\`},
   {q:\`Gdje se nalaze "ključne ideje" u tipičnom polaznom tekstu?\`,o:[\`Često u prvoj i posljednjoj rečenici paragrafa\`,\`Samo na kraju teksta\`],t:0,e:\`Tezne rečenice obično otvaraju ili zatvaraju paragraf. Razrada je između.\`},
   {q:\`Koja je NAJVEĆA greška sažetka?\`,o:[\`Doslovno kopiranje (plagijat)\`,\`Premali word count\`],t:0,e:\`Plagijat automatski znači 0 bodova za parafraziranje (40% ocjene).\`},
 ];
@@ -7386,13 +7386,13 @@ if('speechSynthesis' in window && window.speechSynthesis.onvoiceschanged !== und
 
 const POJM_DATA2 = [
   // STRUKTURA (8)
-  {kat:'struktura', term:\`Sažetak\`, def:\`Kratko reproduciranje glavnih ideja polaznog teksta vlastitim riječima. Maturalna duljina: 150-200 riječi.\`, star:true},
+  {kat:'struktura', term:\`Sažetak\`, def:\`Kratko reproduciranje glavnih ideja polaznog teksta vlastitim riječima. Maturalna duljina: 200–250 riječi.\`, star:true},
   {kat:'struktura', term:\`Polazni tekst\`, def:\`Original koji se sažima. Na maturi: 600-1000 riječi (esej, novinski članak, znanstveno-popularni tekst, književni odlomak).\`, star:true},
   {kat:'struktura', term:\`Glavna ideja\`, def:\`Najvažnija tvrdnja autora koja se mora uključiti u sažetak. Razlikovati od sporednih.\`, star:true},
   {kat:'struktura', term:\`Sporedna ideja\`, def:\`Detalji, primjeri, ilustracije koji nisu nositelji argumenta. U sažetku se izostavljaju.\`, star:false},
-  {kat:'struktura', term:\`Kompresijski omjer\`, def:\`Sažetak je oko 20-25% originala. Ako je polazni 800r, sažetak je ~180r.\`, star:true},
-  {kat:'struktura', term:\`1/4 pravilo\`, def:\`Mnemotehnika: sažetak = ¼ originala. Ako je polazni 600r, sažetak je 150r.\`, star:true},
-  {kat:'struktura', term:\`Word count\`, def:\`Broj riječi sažetka. Idealno 150-200, sweet spot 170-190. Izvan ovih granica = penalizacija.\`, star:true},
+  {kat:'struktura', term:\`Kompresijski omjer\`, def:\`Omjer broja riječi sažetka i polaznog teksta. Služi za orijentaciju pri vježbanju.\`, star:true},
+  {kat:'struktura', term:\`Zadani raspon\`, def:\`Na državnoj maturi 2026./2027. sažetak ima od 200 do 250 riječi.\`, star:true},
+  {kat:'struktura', term:\`Word count\`, def:\`Broj riječi sažetka. Ispitna uputa traži od 200 do 250 riječi.\`, star:true},
   {kat:'struktura', term:\`Slijed misli\`, def:\`Sažetak slijedi redoslijed originala. Ne smije nasumično prerasporediti ideje.\`, star:true},
   
   // PARAFRAZIRANJE (8)
@@ -7435,7 +7435,7 @@ const POJM_DATA2 = [
   {kat:'ocjena', term:\`Bodovi za sažetak\`, def:\`Sažetak nosi ~15-20% bodova mature iz hrvatskog. Esej 40%.\`, star:true},
   {kat:'ocjena', term:\`Vrijeme za sažetak\`, def:\`60 minuta na maturi. Podjela: 15 min čitanje + 35 min pisanje + 10 min revizija.\`, star:true},
   {kat:'ocjena', term:\`Kriteriji ocjenjivanja\`, def:\`Vjernost (25%) + Parafraziranje (25%) + Objektivnost (20%) + Kompresija (15%) + Stil (15%).\`, star:true},
-  {kat:'ocjena', term:\`Sažetak vs esej\`, def:\`Sažetak = TUĐE ideje, objektivno, 150-200r, 1h. Esej = VLASTITE ideje, argumentirano, 350-450r, 4h.\`, star:true},
+  {kat:'ocjena', term:\`Sažetak vs esej\`, def:\`Sažetak = TUĐE ideje, objektivno, 200–250r, 1h. Esej = VLASTITE ideje, argumentirano, 350-450r, 4h.\`, star:true},
 ];let pojm2Active = 'all';
 let pojm2Mode = 'grid';
 let pj2Data = [];
@@ -12026,13 +12026,13 @@ const INTERP_QS = [
   {cat:'tipovi', q:\`Kod esejističkog teksta, što izbacuješ?\`, opts:[\`Stilske figure (metafore, hiperbole)\`, \`Tezu autora\`], correct:0, e:\`Stilske figure su ukrasi — sažetak ide na sadržaj.\`},
   {cat:'tipovi', q:\`Kod znanstvenog teksta, što sačuvaš?\`, opts:[\`Ključne termine i objašnjenje mehanizma\`, \`Anegdotalne povijesne primjere\`], correct:0, e:\`Termini + mehanizam su esencija znanstvenog teksta.\`},
   {cat:'tipovi', q:\`Tipična 1. rečenica sažetka esejističkog teksta:\`, opts:[\`Autor + naslov + tema\`, \`Statistika iz teksta\`], correct:0, e:\`Standardno: „U članku „X" autor Y obrazlaže..."\`},
-  {cat:'tipovi', q:\`Koliko paragrafa sažetka tipično?\`, opts:[\`1-2 paragrafa\`, \`4-5 paragrafa\`], correct:0, e:\`150-200 riječi je obično 1-2 dobro strukturirana paragrafa.\`},
+  {cat:'tipovi', q:\`Koliko paragrafa sažetka tipično?\`, opts:[\`1-2 paragrafa\`, \`4-5 paragrafa\`], correct:0, e:\`Za ovu kratku vježbu dovoljan je jedan ili dva povezana odlomka. Za cjelovit sažetak rasporedi ideje u smislene cjeline.\`},
 
   // ━━━ ANTI-PRAVILA (10) ━━━
   {cat:'anti', q:\`Što je plagijat u sažetku?\`, opts:[\`5+ uzastopnih riječi iz originala\`, \`Korištenje sinonima\`], correct:0, e:\`5+ uzastopnih riječi = plagijat. Mijenjanje 1-2 riječi nije parafraza.\`},
   {cat:'anti', q:\`Razlika između prepričavanja i sažimanja:\`, opts:[\`Prepričavanje ide rečenicu po rečenicu, sažimanje kondenzira na ideje\`, \`Prepričavanje koristi sinonime, sažimanje ne\`], correct:0, e:\`Sažimanje = ekstrakt glavnih ideja, ne sve rečenice.\`},
   {cat:'anti', q:\`Koja fraza je ZABRANJENA u sažetku?\`, opts:[\`„Mislim da..."\`, \`„U tekstu se ističe..."\`], correct:0, e:\`„Mislim da" je subjektivna fraza — gubitak bodova.\`},
-  {cat:'anti', q:\`Idealan word count sažetka:\`, opts:[\`170-190 riječi (sweet spot)\`, \`300-350 riječi\`], correct:0, e:\`Standard 150-200, idealno 170-190.\`},
+  {cat:'anti', q:\`Tražena duljina maturalnog sažetka\`, opts:[\`200–250 riječi\`, \`300-350 riječi\`], correct:0, e:\`Ispitna uputa traži od 200 do 250 riječi.\`},
   {cat:'anti', q:\`Što ako autor ima 3 glavne ideje?\`, opts:[\`Sve 3 moraju biti u sažetku\`, \`Dovoljna je jedna glavna\`], correct:0, e:\`Gubitak ideje = ozbiljna greška.\`},
   {cat:'anti', q:\`Smiješ li dodati informacije kojih NEMA u originalu?\`, opts:[\`Ne — sažetak je vjeran originalu\`, \`Da — kao vlastiti komentar\`], correct:0, e:\`Sažetak NE izmišlja. Reproduciraj točno.\`},
   {cat:'anti', q:\`„Mnogi smatraju" smiješ pretvoriti u „svi se slažu"?\`, opts:[\`Ne — to je pretjerivanje\`, \`Da — slično značenje\`], correct:0, e:\`Pretjerivanje mijenja autorovu poruku.\`},
@@ -12435,7 +12435,7 @@ function wsGetInProgress(){
             const parsed = JSON.parse(data);
             if(parsed.text && parsed.text.trim().length > 0){
               const wc = wsCountWords(parsed.text);
-              const status = wc < 150 ? \`\${150-wc}r premalo\` : (wc > 200 ? \`+\${wc-200}r previše\` : '✓ idealno');
+              const status = wc < 200 ? \`\${200 - wc}r premalo\` : (wc > 250 ? \`+\${wc - 250}r previše\` : '✓ u rasponu');
               inProgress.push({id, wordCount: wc, statusLabel: status});
             }
           } catch(e){}
@@ -12544,7 +12544,7 @@ function wsRenderWorkspace(topicId){
         <div class="ws-summary">
           <div class="ws-summary-header">
             <span class="ws-summary-h">📝 Tvoj sažetak</span>
-            <span class="ws-summary-target">cilj 150-200 r</span>
+            <span class="ws-summary-target">cilj 200–250 r</span>
           </div>
           
           <textarea 
@@ -12558,7 +12558,7 @@ function wsRenderWorkspace(topicId){
           <div class="ws-statusbar">
             <div class="ws-counter">
               <span class="ws-counter-num" id="ws-counter-num">0</span>
-              <span class="ws-counter-target">/ 150-200 r</span>
+              <span class="ws-counter-target">/ 200–250 r</span>
             </div>
             <div class="ws-counter-bar">
               <div class="ws-counter-bar-fill" id="ws-counter-bar-fill"></div>
@@ -12613,7 +12613,7 @@ function wsRenderWorkspace(topicId){
           <div class="ws-actions">
             <button type="button" class="nb-btn" onclick="wsManualSave()">💾 Spremi</button>
             <button type="button" class="nb-btn" onclick="wsClearSummary()">🗑 Briši</button>
-            <button type="button" class="nb-btn" onclick="wsShowModelSummary()">👁 Modelni sažetak</button>
+            <button type="button" class="nb-btn" onclick="wsShowModelSummary()">👁 Ogled sažetka</button>
             <button type="button" class="nb-btn primary" onclick="sw(6)">✓ Provjeri →</button>
           </div>
         </div>
@@ -12665,8 +12665,8 @@ function wsUpdateCounter(){
   if(numEl) numEl.textContent = wc;
   
   let color, fillPct;
-  if(wc < 150){ color = 'var(--red)'; fillPct = (wc / 150) * 70; }
-  else if(wc <= 200){ color = 'var(--green)'; fillPct = 70 + ((wc - 150) / 50) * 30; }
+  if(wc < 200){ color = 'var(--red)'; fillPct = (wc / 200) * 70; }
+  else if(wc <= 250){ color = 'var(--green)'; fillPct = 70 + ((wc - 200) / 50) * 30; }
   else { color = 'var(--gold)'; fillPct = 100; }
   
   if(numEl) numEl.style.color = color;
@@ -12687,13 +12687,7 @@ function wsUpdateCompression(){
   const el = document.getElementById('ws-compression');
   if(!el) return;
   
-  let color = 'var(--t1)';
-  if(ratio < 15) color = 'var(--red)';
-  else if(ratio >= 15 && ratio <= 30) color = 'var(--green)';
-  else if(ratio > 30) color = 'var(--gold)';
-  
   el.textContent = ratio + '%';
-  el.style.color = color;
 }
 
 // ═══ PLAGIARISM DETECTOR ═══
@@ -12883,7 +12877,8 @@ function wsShowModelSummary(){
   if (typeof window.MT !== 'undefined' && window.MT.Tier && !window.MT.Tier.hasFeature('all_summary_models')) {
     upgradeHint = '\\n\\n💎 Pretplati se na Standard za pristup svih 10 modelnih sažetaka.';
   }
-  alert('📜 MODELNI SAŽETAK (' + wc + ' riječi):\\n\\n' + topic.modelSummary + '\\n\\n💡 Usporedi sa svojim sažetkom — koje su razlike?' + upgradeHint);
+  const label = wc >= 200 && wc <= 250 ? 'CJELOVIT OGLED' : 'SKRAĆENI OGLED ZA VJEŽBU';
+  alert('📜 ' + label + ' (' + wc + ' riječi):\\n\\n' + topic.modelSummary + '\\n\\n💡 Usporedi sa svojim sažetkom — koje su razlike?' + upgradeHint);
 }
 
 // ═══ TIMER ═══
@@ -13014,7 +13009,7 @@ const CHECKLIST_ITEMS = [
   {cat:'objektivnost', id:'o5', text:'Bez vlastitog zaključka koji nije u originalu', auto:false},
   
   // ━━━ PISMENOST (5) ━━━
-  {cat:'pismenost', id:'pi1', text:'Word count u rasponu 150-200 riječi', auto:true, autoCheck:'wordCount', important:true},
+  {cat:'pismenost', id:'pi1', text:'Word count u rasponu 200–250 riječi', auto:true, autoCheck:'wordCount', important:true},
   {cat:'pismenost', id:'pi2', text:'Bez pravopisnih grešaka (vidi H25)', auto:false, important:true, link:'h25'},
   {cat:'pismenost', id:'pi3', text:'Ispravna interpunkcija (vidi H26)', auto:false, important:true, link:'h26'},
   {cat:'pismenost', id:'pi4', text:'Hrvatski navodnici „..." (ne engleski "...")', auto:true, autoCheck:'croatianQuotes'},
@@ -13108,7 +13103,7 @@ function chkRunAutoChecks(){
     
     let result = false;
     if(item.autoCheck === 'wordCount'){
-      result = wc >= 150 && wc <= 200;
+      result = wc >= 200 && wc <= 250;
     } else if(item.autoCheck === 'croatianQuotes'){
       const hr = (text.match(/„/g) || []).length;
       const en = (text.match(/(?<![\\w])"[^"]+"(?![\\w])/g) || []).length;
@@ -13544,15 +13539,15 @@ async function aiRunFeedback(){
     
     const systemPrompt = \`Ti si iskusan profesor hrvatskog jezika koji ocjenjuje sažetke za državnu maturu.
 
-Kriteriji ocjenjivanja sažetka:
+Kriteriji za vježbu u skripti:
 - Vjernost originalu (25%): jesu li sve glavne ideje uključene, bez izmišljanja, isti slijed
 - Parafraziranje (25%): bez plagijata (5+ uzastopnih riječi iz originala), prava parafraza, ne 1-2 izmijenjene riječi
 - Objektivnost (20%): bez subjektivnih fraza ("mislim da", "smatram"), neutralan ton, 3. lice
-- Kompresija (15%): word count 150-200r, omjer 20-25% originala
+- Kompresija (15%): sažetak izdvaja bitno i ima od 200 do 250 riječi
 - Stil (15%): bogat rječnik, sinonimi za "kaže", hrvatski navodnici „...", pismenost
 
 Pravila:
-- Sažetak mora biti 150-200 riječi (idealno 170-190)
+- Sažetak mora imati od 200 do 250 riječi
 - Mora počinjati s autorom i naslovom
 - 3. lice neutralno
 
@@ -13806,7 +13801,11 @@ Suvremeni kulturni paradoks Hrvatske glasi: nikad nije bilo lakše konzumirati g
       \`Pravo pitanje je u kojem obliku će kultura preživjeti, ne hoće li\`,
       \`Identitet danas je svjesni izbor, ne automatska danost\`
     ],
-    modelSummary: \`Hrvatska kultura se danas nalazi u sudaru tradicije i globalizacije. Optimistični stav ističe da je nacionalna baština preživjela puno teže izazove kroz povijest — od carskih vlasti do jugoslavenskog razdoblja — i da će se i sada prilagoditi. Pesimisti, međutim, naglašavaju da sadašnji izazov ima drugačiju narav: globalizacija ne djeluje političkom prisilom, nego ekonomskom i medijskom dominacijom koju mladi spontano prihvaćaju. Stvarna situacija je negdje između — kultura se ne gubi, ali mijenja brže nego ikad. Pojavljuju se nove forme poput podcasta i YouTube kanala koji privlače mlade. Pravo pitanje nije hoće li hrvatska kultura preživjeti, nego u kojem obliku. Odgovor ovisi o obrazovnom sustavu, medijima i samim stvarateljima koji moraju spojiti tradiciju i suvremenost. Identitet više nije zadan rođenjem — postao je svakodnevni svjesni izbor svakog pojedinca.\`
+    modelSummary: \`U tekstu „Hrvatska kultura između tradicije i suvremenosti” Tomislav Bogdanović razmatra kako globalizacija utječe na baštinu, jezik i kulturni identitet. Književnost, glazba i likovna umjetnost stoljećima su oblikovale način na koji ljudi u Hrvatskoj shvaćaju vlastitu kulturu. U isto vrijeme internet, mobilnost mladih i globalna ponuda zabave preoblikuju njihove jezične navike i vrijednosti.
+
+Jedni smatraju da se hrvatska kultura može prilagoditi novim okolnostima jer je opstala i u razdobljima političkih pritisaka i ratova. Hrvatski jezik usvajao je strane izraze, a književnost preuzimala europske utjecaje, pri čemu su i jezik i književnost ostali prepoznatljivi. Drugi ističu da je današnji pritisak drukčiji. Globalne platforme i tržište privlače mlade sadržajem na engleskome jeziku pa im domaća baština može djelovati udaljeno. Autor primjećuje da se uporaba anglizama širi upravo dok se stvaraju novi domaći sadržaji. Hrvatski podcasti, videosadržaji i suvremena glazba pokazuju da i hrvatska kultura može privući mlade u medijima kojima se svakodnevno služe.
+
+Bogdanović stoga pozornost usmjerava na budući oblik hrvatske kulture. Školama pripisuje ulogu u čuvanju pisanoga jezičnog standarda, a medijima u predstavljanju domaćih autora publici. Stvaratelji mogu povezati naslijeđe sa suvremenim oblicima izražavanja i tako ga učiniti bliskim mlađim naraštajima. Autor zaključuje da očuvanje baštine ovisi o svakodnevnim kulturnim izborima pojedinaca. Mladi koji poznaju i starija hrvatska djela i suvremeno stvaralaštvo mogu tu kulturu prenijeti dalje.\`
   },
   
   {
@@ -14256,7 +14255,7 @@ function sumGetInProgress(){
             const parsed = JSON.parse(data);
             if(parsed.text && parsed.text.trim().length > 0){
               const wc = sumCountWords(parsed.text);
-              const status = wc < 150 ? \`\${150-wc}r premalo\` : (wc > 200 ? \`+\${wc-200}r previše\` : '✓ idealno');
+              const status = wc < 200 ? \`\${200 - wc}r premalo\` : (wc > 250 ? \`+\${wc - 250}r previše\` : '✓ u rasponu');
               inProgress.push({id, wordCount: wc, statusLabel: status});
             }
           } catch(e){}
@@ -14330,13 +14329,13 @@ function sumRenderWorkspace(textId){
         <div class="sum-summary-pane \${!sumState.showOriginal ? 'visible' : 'hidden-mobile'}">
           <div class="sum-pane-header">
             <div class="sum-pane-label">📝 TVOJ SAŽETAK</div>
-            <div class="sum-pane-meta" id="sum-comp-meta">Cilj: 150-200 riječi (~\${Math.round(origWordCount * 0.20)}r)</div>
+            <div class="sum-pane-meta" id="sum-comp-meta">Cilj: 200–250 riječi</div>
           </div>
           
           <textarea 
             id="sum-textarea" 
             class="sum-textarea" 
-            placeholder="Počni pisati svoj sažetak ovdje (150-200 riječi)..."
+            placeholder="Počni pisati svoj sažetak ovdje (200–250 riječi)..."
             oninput="sumOnInput()"
             onkeydown="sumOnKeydown(event)"
           >\${savedText.replace(/</g, '&lt;')}</textarea>
@@ -14344,7 +14343,7 @@ function sumRenderWorkspace(textId){
           <div class="sum-counters">
             <div class="sum-counter">
               <span class="sum-counter-num" id="sum-counter-num">0</span>
-              <span class="sum-counter-target">/ 150-200 riječi</span>
+              <span class="sum-counter-target">/ 200–250 riječi</span>
             </div>
             <div class="sum-counter sum-counter-comp">
               Kompresija: <span id="sum-comp-num">0%</span>
@@ -14379,7 +14378,7 @@ function sumRenderWorkspace(textId){
           <div class="sum-actions">
             <button type="button" class="nb-btn" onclick="sumManualSave()">💾 Spremi</button>
             <button type="button" class="nb-btn" onclick="sumClearSummary()">🗑 Briši</button>
-            <button type="button" class="nb-btn" onclick="sumShowModel()">📜 Modelni sažetak</button>
+            <button type="button" class="nb-btn" onclick="sumShowModel()">📜 Ogled sažetka</button>
             <button type="button" class="nb-btn primary" onclick="sw(6)">✓ Provjeri →</button>
           </div>
           
@@ -14396,7 +14395,7 @@ function sumRenderWorkspace(textId){
     <div id="sum-modal-modal" class="sum-modal" style="display:none">
       <div class="sum-modal-content">
         <div class="sum-modal-header">
-          <div class="sum-modal-title">📜 Modelni sažetak</div>
+          <div class="sum-modal-title">📜 Ogled sažetka</div>
           <button type="button" class="sum-modal-close" onclick="sumCloseModel()">✕</button>
         </div>
         <div class="sum-modal-body">
@@ -14454,12 +14453,12 @@ function sumUpdateAll(){
   if(numEl) numEl.textContent = wc;
   
   let color, fillPct;
-  if(wc < 150){
+  if(wc < 200){
     color = 'var(--red)';
-    fillPct = (wc / 150) * 70;
-  } else if(wc <= 200){
+    fillPct = (wc / 200) * 70;
+  } else if(wc <= 250){
     color = 'var(--green)';
-    fillPct = 70 + ((wc - 150) / 50) * 30;
+    fillPct = 70 + ((wc - 200) / 50) * 30;
   } else {
     color = 'var(--gold)';
     fillPct = 100;
@@ -14478,12 +14477,6 @@ function sumUpdateAll(){
     const compEl = document.getElementById('sum-comp-num');
     if(compEl){
       compEl.textContent = comp + '%';
-      let compColor;
-      if(comp < 10) compColor = 'var(--red)';
-      else if(comp <= 25) compColor = 'var(--green)';
-      else if(comp <= 35) compColor = 'var(--gold)';
-      else compColor = 'var(--red)';
-      compEl.style.color = compColor;
     }
   }
   
@@ -14717,6 +14710,12 @@ function sumShowModel(){
   
   const modal = document.getElementById('sum-modal-modal');
   const textEl = document.getElementById('sum-modal-text-content');
+  const title = modal?.querySelector('.sum-modal-title');
+  const wordCount = sumCountWords(text.modelSummary);
+  if(title){
+    const label = wordCount >= 200 && wordCount <= 250 ? 'Cjelovit ogled' : 'Skraćeni ogled za vježbu';
+    title.textContent = label + ' (' + wordCount + ' riječi)';
+  }
   const ideasList = document.getElementById('sum-modal-keyideas-list');
   
   if(textEl){

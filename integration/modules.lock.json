@@ -195,7 +195,11 @@
     },
     "skripte": {
       "baseCommit": "14477f48464faf5b28ab668795a4924c9d517321",
-      "pathCommits": {},
+      "pathCommits": {
+        "app/skripte/data/eng/niza/poglavlje10.js": "a4aa056441533a6df3f4367be569a70dfb34f13a",
+        "app/skripte/data/eng/visa/poglavlje17.js": "a4aa056441533a6df3f4367be569a70dfb34f13a",
+        "app/skripte/data/hrv-components/poglavlje28.jsx": "a4aa056441533a6df3f4367be569a70dfb34f13a"
+      },
       "deleted": []
     },
     "termini": {
