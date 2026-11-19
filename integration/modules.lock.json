@@ -45,7 +45,8 @@
     "supabase/migrations/20260920000000_sim_progress_percentile_idx.sql",
     "supabase/migrations/20260922000000_ai_usage_ledger.sql",
     "supabase/migrations/20260922000000_sim_progress_attempt_id.sql",
-    "supabase/migrations/20260922010000_sim_progress_rls_insert_only.sql"
+    "supabase/migrations/20260922010000_sim_progress_rls_insert_only.sql",
+    "supabase/migrations/20261119163143_admin_overview_metrics.sql"
   ],
   "modules": {
     "administracija": {
@@ -170,7 +171,9 @@
     },
     "server": {
       "baseCommit": "279d39f60e042b52ca6b5a7d6aa102088b8cef96",
-      "pathCommits": {},
+      "pathCommits": {
+        "supabase/migrations/20261119163143_admin_overview_metrics.sql": "6c1c14497739e510e135a636445657546cd3ff65"
+      },
       "deleted": []
     },
     "skripte": {
