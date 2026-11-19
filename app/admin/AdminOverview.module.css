@@ -1,7 +1,7 @@
 .overview {
   width: min(72rem, 100% - 2rem);
   margin-inline: auto;
-  padding-block: 3rem;
+  padding-block: max(3rem, 76px) 3rem;
   display: grid;
   gap: 1.75rem;
 }
@@ -24,10 +24,188 @@
 }
 
 .tools a,
-.panel a {
+.panel a,
+.workspace a {
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 0.18em;
+}
+
+.tabs,
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.tabs a,
+.pagination a {
+  color: inherit;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+
+.tabs a[aria-current="page"],
+.pagination a[aria-current="page"] {
+  background: color-mix(in srgb, var(--blue, #526bff) 22%, transparent);
+  border-color: var(--blue, #526bff);
+  font-weight: 700;
+}
+
+.workspace {
+  min-width: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.tableWrap {
+  max-width: 100%;
+  overflow: auto;
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  border-radius: 0.65rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.table th,
+.table td {
+  padding: 0.65rem 0.8rem;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.table thead {
+  background: color-mix(in srgb, currentColor 6%, transparent);
+}
+
+.table tr + tr {
+  border-top: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.table small {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.filters,
+.actionForm {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.actionForm {
+  margin-block: 0.75rem;
+}
+
+.filters label,
+.actionForm label {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.filters input,
+.filters select,
+.actionForm input:not([type="checkbox"]),
+.actionForm select,
+.filters button,
+.actionForm button {
+  min-height: 2.5rem;
+  max-width: 100%;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid color-mix(in srgb, currentColor 28%, transparent);
+  border-radius: 0.5rem;
+  background: var(--s1, #111526);
+  color: inherit;
+  font: inherit;
+}
+
+.filters button,
+.actionForm button {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.actionForm button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.actionForm .checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.8rem;
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+}
+
+.checks label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.feedback {
+  flex-basis: 100%;
+}
+
+.workspace summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+
+.entries,
+.attention {
+  margin-block: 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.entries li,
+.attention li {
+  padding: 0.7rem;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+}
+
+.attention li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.entries h4 {
+  margin: 0 0 0.4rem;
+  overflow-wrap: anywhere;
+}
+
+.empty {
+  padding-block: 0.7rem;
+}
+
+.overview :where(a, input, select, button, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--blue, #7890ff);
+  outline-offset: 2px;
+}
+
+@media (max-width: 42rem) {
+  .table th,
+  .table td {
+    min-width: 7.5rem;
+  }
+
+  .filters label {
+    flex: 1 1 12rem;
+    min-width: 0;
+  }
 }
 
 .metrics,
