@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "appBase": "0d2bb0d3be7b37f99e18130b8d4906dbda3b8e5f",
+  "contractVersion": "plan-v1",
+  "audioRelease": "eng-audio-v1",
+  "migrationOrder": [
+    "supabase/migrations/20260401000000_profiles_bootstrap.sql",
+    "supabase/migrations/20260405000000_checklist.sql",
+    "supabase/migrations/20260406000000_add_plan_type.sql",
+    "supabase/migrations/20260406120000_activity_events.sql",
+    "supabase/migrations/20260407000000_parent_children.sql",
+    "supabase/migrations/20260407000001_parent_preferences.sql",
+    "supabase/migrations/20260407000002_add_email_reminders.sql",
+    "supabase/migrations/20260416000000_chapter_progress.sql",
+    "supabase/migrations/20260418000000_discere_paywall.sql",
+    "supabase/migrations/20260418000001_prijemni_fakulteti_studiji.sql",
+    "supabase/migrations/20260418000002_prijemni_seed.sql",
+    "supabase/migrations/20260418_analytics_events.sql",
+    "supabase/migrations/20260419000000_prijemni_events_studij_id.sql",
+    "supabase/migrations/20260419000001_prijemni_events_rls_indexes.sql",
+    "supabase/migrations/20260419000002_reminders.sql",
+    "supabase/migrations/20260419000003_user_prijemni_scores.sql",
+    "supabase/migrations/20260419000004_prijemni_staging_audit.sql",
+    "supabase/migrations/20260419000005_profiles_role.sql",
+    "supabase/migrations/20260419000006_user_compare_sets.sql",
+    "supabase/migrations/20260419_ab_tests.sql",
+    "supabase/migrations/20260420000007_push_subscriptions.sql",
+    "supabase/migrations/20260420000008_medicinar_mode.sql",
+    "supabase/migrations/20260420000009_predmet_progress_triggers.sql",
+    "supabase/migrations/20260420000010_parent_medicinar_rls.sql",
+    "supabase/migrations/20260421000011_target_archive_cols.sql",
+    "supabase/migrations/20260426_onboarding_ab.sql",
+    "supabase/migrations/20260627000000_sim_progress.sql",
+    "supabase/migrations/20260627010000_discere_sim_state.sql",
+    "supabase/migrations/20260715010000_profile_entitlement_guard.sql",
+    "supabase/migrations/20260715020000_parent_consent_v2.sql",
+    "supabase/migrations/20260715030000_stripe_webhook_events.sql",
+    "supabase/migrations/20260718000000_fix_scores_rls.sql",
+    "supabase/migrations/20260718000001_fix_push_rls.sql",
+    "supabase/migrations/20260718000002_active_user_plan_invoker.sql",
+    "supabase/migrations/20260718000003_subscriptions_full_unique.sql",
+    "supabase/migrations/20260721000000_game_mode_hrv.sql",
+    "supabase/migrations/20260722000000_ai_rate_limit.sql",
+    "supabase/migrations/20260722010000_ai_rate_limit_atomic.sql",
+    "supabase/migrations/20260920000000_sim_progress_percentile_idx.sql",
+    "supabase/migrations/20260922000000_ai_usage_ledger.sql",
+    "supabase/migrations/20260922000000_sim_progress_attempt_id.sql",
+    "supabase/migrations/20260922010000_sim_progress_rls_insert_only.sql"
+  ],
+  "modules": {
+    "administracija": {
+      "baseCommit": "1282560238faff8bb5a1d460b63c45dbcf357075",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "agent-ops": {
+      "baseCommit": "f990363af678cad47dc9a1a39517cf4b196c1469",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "ai-agenti": {
+      "baseCommit": "da06003b5215ea6dcac56615e2ea97318e33e8da",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "ai-profesor": {
+      "baseCommit": "06460d4d8c75331b6787add049884ce43a74df09",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "app": {
+      "baseCommit": "0d2bb0d3be7b37f99e18130b8d4906dbda3b8e5f",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "atlas": {
+      "baseCommit": "7ee95f7db5c34d9f58ab838460dcabdd2b4dd3f2",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "checklist": {
+      "baseCommit": "c4f5c1c56d8ad0403d7d11e8462afc9ab4510905",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "dashboard": {
+      "baseCommit": "5c57f5a602bb5848ad7de799c49866df1702fd85",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "formule": {
+      "baseCommit": "7c0722c2010001eceed6a448483b1c22f66b45aa",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "game": {
+      "baseCommit": "0be84b6519313757e1404176c132929770b1e238",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "ispiti": {
+      "baseCommit": "5dd41d15ce1593ba742d2f7970b6b006fa06ee9e",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "kalkulator": {
+      "baseCommit": "ccf28a52864566507ce53968f7cd6dc06532f149",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "maturiraj-eng-audio": {
+      "baseCommit": "1427309efe20879bf05e103789c0e855cdb4e11a",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "medicinar": {
+      "baseCommit": "0f15f3986c12eca6b79145293fba7ff697809170",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "naslovnica": {
+      "baseCommit": "dde5d7599270215729eb81b479d1d076dd0288e4",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "plan-ucenja": {
+      "baseCommit": "3d3b03ee8ab9c1f21bab528094152bf96229089e",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "preloader": {
+      "baseCommit": "04a933cdd8a3261bf60841f0c3bafae8f9b0a0ff",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "pretplate": {
+      "baseCommit": "61b6531e38d3a8ebbecfaabc809f27a3ff864ed4",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "prijemni": {
+      "baseCommit": "8220ce32ecec3c16bc4f16c48150bc8f86f1cb81",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "racuni": {
+      "baseCommit": "eb2a381fa3ed02f6195d3e0f9b66fd394c98368f",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "roditelji": {
+      "baseCommit": "f1cec48b7f7f78fcc53dfed463d9dcf95ddb3169",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "sadrzaj": {
+      "baseCommit": "c6ee99028a7b2f225887db11db5728e74a32e06c",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "server": {
+      "baseCommit": "279d39f60e042b52ca6b5a7d6aa102088b8cef96",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "skripte": {
+      "baseCommit": "14477f48464faf5b28ab668795a4924c9d517321",
+      "pathCommits": {},
+      "deleted": []
+    },
+    "termini": {
+      "baseCommit": "46511fc2dbbee76a2911b0c92e9372c8d2cc408f",
+      "pathCommits": {},
+      "deleted": []
+    }
+  }
+}
