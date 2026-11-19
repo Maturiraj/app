@@ -135,7 +135,10 @@
     },
     "pretplate": {
       "baseCommit": "61b6531e38d3a8ebbecfaabc809f27a3ff864ed4",
-      "pathCommits": {},
+      "pathCommits": {
+        "lib/billing/subscriptions.js": "aacc4e63d1c282fab97b1dd680d8de2361e4e9f1",
+        "lib/entitlements.js": "aacc4e63d1c282fab97b1dd680d8de2361e4e9f1"
+      },
       "deleted": []
     },
     "prijemni": {
