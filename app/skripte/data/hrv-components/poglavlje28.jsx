@@ -10373,7 +10373,7 @@ async function aiAsk(){
   answerEl.scrollIntoView({behavior:'smooth', block:'nearest'});
   
   try {
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
+    const response = await fetch("/api/ai/skripta", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
@@ -13602,7 +13602,7 @@ Daj feedback po kriterijima. SAMO JSON u traženom formatu.\`;
     // 🚨 PRODUCTION TODO: Move this fetch to backend proxy (Next.js /api/ai-feedback)
     // Current: API call from browser would expose API key in production.
     // Plan: Next.js API route → Supabase tier check → proxy to Anthropic API → return result
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const response = await fetch('/api/ai/skripta', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

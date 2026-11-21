@@ -5,7 +5,9 @@ import { createAdminClient } from '@/lib/supabase/admin'
 // User's dashboard returns to normal mode automatically (no active targets).
 
 export async function GET(request) {
-  if (request.headers.get('authorization') !== `Bearer ${process.env.CRON_SECRET}`) {
+  // Fail-closed: ako CRON_SECRET nije postavljen, 'Bearer undefined' bi inače prošao
+  const cronSecret = process.env.CRON_SECRET
+  if (!cronSecret || request.headers.get('authorization') !== `Bearer ${cronSecret}`) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 

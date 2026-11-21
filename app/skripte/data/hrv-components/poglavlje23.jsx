@@ -9739,7 +9739,7 @@ async function aiAsk(){
 
     // Plan: Next.js API route → Supabase tier check → proxy to Anthropic API → return result
 
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
+    const response = await fetch("/api/ai/skripta", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({

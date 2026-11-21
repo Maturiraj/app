@@ -97,20 +97,22 @@ export async function POST(req) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  const model = 'claude-haiku-4-5'
+  const model = 'claude-haiku-5-5'
+  const maxTokens = 1024 // uključuje adaptive thinking
   let requestId
   try {
     ({ requestId } = await reserveUsage({ userId: user.id, feature: 'compare-insight', tier: 'pro', model,
-      estimatedInputTokens: new TextEncoder().encode(SYSTEM_PROMPT + userMessage).length + 2048, maxOutputTokens: 220 }))
+      estimatedInputTokens: new TextEncoder().encode(SYSTEM_PROMPT + userMessage).length + 2048, maxOutputTokens: maxTokens }))
     const msg = await getAnthropic().messages.create({
     model,
-    max_tokens: 220,
+    max_tokens: maxTokens,
+    output_config: { effort: 'low' },
     system:     SYSTEM_PROMPT,
     messages:   [{ role: 'user', content: userMessage }],
     })
     await completeUsage({ requestId, model, usage: msg.usage })
 
-    const insight = msg.content?.[0]?.text?.trim() ?? ''
+    const insight = (msg.content || []).find(b => b.type === 'text')?.text?.trim() ?? ''
     if (!insight) return NextResponse.json({ error: 'AI nije vratio odgovor.' }, { status: 502 })
 
     return NextResponse.json({ insight })

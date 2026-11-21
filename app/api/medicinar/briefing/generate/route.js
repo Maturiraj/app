@@ -118,22 +118,24 @@ ${scores ? `Uneseni bodovi: prosjeci ${scores.prosjek_r1 || '-'}/${scores.prosje
 Generiraj tjedni briefing.`
 
   let requestId
-  const model = 'claude-sonnet-4-6'
+  const model = 'claude-sonnet-5-5'
+  const maxTokens = 3000 // uključuje adaptive thinking
   try {
     ({ requestId } = await reserveUsage({
       userId, feature: 'medicinar-briefing', tier: 'pro', model,
       estimatedInputTokens: new TextEncoder().encode(systemPrompt + userPrompt).length + 2048,
-      maxOutputTokens: 1200,
+      maxOutputTokens: maxTokens,
     }))
     const response = await getAnthropic().messages.create({
       model,
-      max_tokens: 1200,
+      max_tokens: maxTokens,
+      output_config: { effort: 'low' },
       system: systemPrompt,
       messages: [{ role: 'user', content: userPrompt }],
     })
     await completeUsage({ requestId, model, usage: response.usage })
 
-    const text = response.content[0].type === 'text' ? response.content[0].text : ''
+    const text = response.content.find(b => b.type === 'text')?.text ?? ''
     let parsed
     try {
       parsed = JSON.parse(text.trim())

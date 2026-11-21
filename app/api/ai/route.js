@@ -132,8 +132,9 @@ export async function POST(req) {
       anthropicMessages = messages;
     }
 
-    const model = "claude-sonnet-4-6";
-    const maxTokens = mode === "profesor" ? 1200 : 600;
+    const model = "claude-sonnet-5-5";
+    // Thinking (adaptive, default) troši max_tokens — ostavi mjesta i za odgovor.
+    const maxTokens = mode === "profesor" ? 3000 : 1600;
     const tier = mode === "profesor" ? "pro" : await getUserTier(user.id);
     const { requestId } = await reserveUsage({
       userId: user.id,
@@ -150,6 +151,7 @@ export async function POST(req) {
       stream = await anthropic.messages.create({
       model,
       max_tokens: maxTokens,
+      output_config: { effort: "low" },
       system,
       messages: anthropicMessages,
       stream: true,

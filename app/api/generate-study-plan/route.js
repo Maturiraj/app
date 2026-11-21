@@ -27,9 +27,10 @@ export async function POST(req) {
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
-    const model = 'claude-sonnet-4-6'
+    const model = 'claude-sonnet-5-5'
+    const maxTokens = 2000 // uključuje adaptive thinking
     const { requestId } = await reserveUsage({ userId: user.id, feature: 'study-plan', tier: 'pro', model,
-      estimatedInputTokens: new TextEncoder().encode(prompt).length + 2048, maxOutputTokens: 500 })
+      estimatedInputTokens: new TextEncoder().encode(prompt).length + 2048, maxOutputTokens: maxTokens })
 
     let res
     try { res = await fetch('https://api.anthropic.com/v1/messages', {
@@ -41,7 +42,8 @@ export async function POST(req) {
       },
       body: JSON.stringify({
         model,
-        max_tokens: 500,
+        max_tokens: maxTokens,
+        output_config: { effort: 'low' },
         messages: [{ role: 'user', content: prompt }],
       }),
     }) } catch (error) {
@@ -65,7 +67,7 @@ export async function POST(req) {
       await markUsageUncertain({ requestId }).catch(() => {})
       throw error
     }
-    const text = data.content?.[0]?.text || ''
+    const text = (data.content || []).find((b) => b.type === 'text')?.text || ''
     const clean = text.replace(/```json|```/g, '').trim()
     const plan = JSON.parse(clean)
 

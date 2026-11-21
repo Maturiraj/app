@@ -69,9 +69,10 @@ export async function POST(req) {
     if (!Number.isSafeInteger(Number(max_tokens)) || Number(max_tokens) < 1) {
       return NextResponse.json({ error: 'Invalid max_tokens' }, { status: 400 });
     }
-    const safeMaxTokens = Math.min(Number(max_tokens), 2000);
+    // +1000 za adaptive thinking, koji se broji u max_tokens.
+    const safeMaxTokens = Math.min(Number(max_tokens), 2000) + 1000;
 
-    const model = 'claude-sonnet-4-6';
+    const model = 'claude-sonnet-5-5';
     const tier = await getUserTier(user.id);
     const { requestId } = await reserveUsage({
       userId: user.id, feature: 'ai-simulator', tier, model,
@@ -83,6 +84,7 @@ export async function POST(req) {
       response = await anthropic.messages.create({
       model,
       max_tokens: safeMaxTokens,
+      output_config: { effort: 'low' },
       messages,
       });
       await completeUsage({ requestId, model, usage: response.usage });
@@ -92,7 +94,11 @@ export async function POST(req) {
       throw error;
     }
 
-    return NextResponse.json(response);
+    // Klijent čita content[0].text — odgovor može početi thinking blokom, pa šaljemo samo tekst.
+    return NextResponse.json({
+      ...response,
+      content: (response.content || []).filter((b) => b.type === 'text'),
+    });
   } catch (err) {
     console.error("[ai-simulator] Error:", err);
     if (err?.code === 'AI_BUDGET_EXCEEDED') return NextResponse.json({ error: 'AI budget exceeded', code: err.code }, { status: 429 });
